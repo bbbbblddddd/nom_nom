@@ -1,13 +1,15 @@
-import './App.css';
+import React from 'react';
+import NomNomContainer from './container/NomNomContainer';
+
 
 function App() {
   return (
 
     <>
-    <p> Nom Nom </p>
+     <NomNomContainer />
     </>
 
-  );
+    )
 }
 
 export default App;
