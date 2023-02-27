@@ -1,11 +1,17 @@
 package nom_nom.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tips")
 public class Tip {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "image_url")
     private String image_url;
-
+    @Column(name = "action")
     private String action;
 
     private String text;
@@ -16,6 +22,9 @@ public class Tip {
         this.text = text;
     }
 
+    public Tip() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -24,11 +33,11 @@ public class Tip {
         this.id = id;
     }
 
-    public Long getImage_url() {
+    public String getImage_url() {
         return image_url;
     }
 
-    public void setImage_url(Long image_url) {
+    public void setImage_url(String image_url) {
         this.image_url = image_url;
     }
 
@@ -47,4 +56,5 @@ public class Tip {
     public void setText(String text) {
         this.text = text;
     }
+
 }

@@ -1,7 +1,15 @@
 package nom_nom.models;
 
-public abstract class IngredientNumbered extends Ingredient{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "quantities")
+public class IngredientNumbered extends Ingredient{
+
+    @Column(name = "quantity")
     private int quantity;
 
     public IngredientNumbered(String name, String image_url, Long recipe_id, FoodType foodType, int quantity) {

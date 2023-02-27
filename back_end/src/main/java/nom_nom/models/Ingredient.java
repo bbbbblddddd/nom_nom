@@ -1,15 +1,21 @@
 package nom_nom.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ingredients")
 public abstract class Ingredient {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "name")
     private String name;
-
+    @Column(name = "image_url")
     private String image_url;
-
+    @Column(name = "recipe_id")
     private Long recipe_id;
-
+    @Column(name = "food_type")
     private FoodType foodType;
 
     public Ingredient(String name, String image_url, Long recipe_id, FoodType foodType) {
@@ -58,4 +64,5 @@ public abstract class Ingredient {
     public void setFoodType(FoodType foodType) {
         this.foodType = foodType;
     }
+
 }

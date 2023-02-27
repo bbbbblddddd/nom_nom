@@ -1,25 +1,31 @@
 package nom_nom.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "recipes")
 public class Recipe {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "name")
     private String name;
-
+    @Column(name = "image_url")
     private String image_url;
-
+    @Column(name = "prep_time")
     private String prepTime;
-
+    @Column(name = "cook_time")
     private String cookTime;
-
+    @Column(name = "servings")
     private int servings;
-
+    @Column(name="meal_type")
+    @Enumerated(value = EnumType.STRING)
     private MealType mealType;
-
+    @Column(name = "extra_equip")
     private String extraEquip;
 
 
-    public Recipe(String name, Long image_id, String prepTime, String cookTime, int servings, MealType mealType, String extraEquip) {
+    public Recipe(String name, String image_url, String prepTime, String cookTime, int servings, MealType mealType, String extraEquip) {
         this.name = name;
         this.image_url = image_url;
         this.prepTime = prepTime;
@@ -27,6 +33,9 @@ public class Recipe {
         this.servings = servings;
         this.mealType = mealType;
         this.extraEquip = extraEquip;
+    }
+
+    public Recipe() {
     }
 
     public Long getId() {
@@ -45,11 +54,11 @@ public class Recipe {
         this.name = name;
     }
 
-    public Long getImage_url() {
+    public String getImage_url() {
         return image_url;
     }
 
-    public void setImage_url(Long image_url) {
+    public void setImage_url(String image_url) {
         this.image_url = image_url;
     }
 
@@ -92,4 +101,5 @@ public class Recipe {
     public void setExtraEquip(String extraEquip) {
         this.extraEquip = extraEquip;
     }
+
 }

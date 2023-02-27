@@ -11,7 +11,4 @@ public enum FoodType {
     FISH,
     HERBS,
 
-
-
-
 }

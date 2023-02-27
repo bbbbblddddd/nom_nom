@@ -1,7 +1,14 @@
 package nom_nom.models;
 
-public astract class IngredientMetric extends Ingredient {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "metric_ingredients")
+public class IngredientMetric extends Ingredient {
+
+    @Column(name = "met_measure")
     private String metMeasure;
 
     public IngredientMetric(String name, String image_url, Long recipe_id, FoodType foodType, String metMeasure) {
