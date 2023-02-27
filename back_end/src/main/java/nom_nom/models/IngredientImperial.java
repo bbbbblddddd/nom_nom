@@ -1,7 +1,15 @@
 package nom_nom.models;
 
-public abstract class IngredientImperial extends Ingredient {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "imperial_ingredients")
+public class IngredientImperial extends Ingredient {
+
+    @Column(name = "imp_measure")
     private String impMeasure;
 
     public IngredientImperial(String name, String image_url, Long recipe_id, FoodType foodType, String impMeasure) {

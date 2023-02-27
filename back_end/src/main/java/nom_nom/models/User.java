@@ -1,14 +1,25 @@
 package nom_nom.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
     }
 
     public String getEmail() {
@@ -34,4 +45,5 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

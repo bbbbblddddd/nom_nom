@@ -1,11 +1,17 @@
 package nom_nom.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "saved recipes")
 public class Step {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "stepNum")
     private int stepNum;
-
+    @Column(name = "description")
     private String description;
 
     private Long recipe_id;
@@ -17,6 +23,9 @@ public class Step {
         this.description = description;
         this.recipe_id = recipe_id;
         this.tip_id = tip_id;
+    }
+
+    public Step() {
     }
 
     public Long getId() {
@@ -58,4 +67,5 @@ public class Step {
     public void setTip_id(Long tip_id) {
         this.tip_id = tip_id;
     }
+
 }
