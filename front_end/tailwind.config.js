@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: "'Rampart One', 'sans-serif'",
-        body: "'Varela Round', 'sans-serif'"
+        body: "'Varela Round', 'sans-serif'",
+        nomnom: "'Bambino', 'sans-serif'"
       },
       animatedSettings: {
         animatedSpeed: 1200,

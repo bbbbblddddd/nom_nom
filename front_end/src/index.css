@@ -1,10 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import 'animate.css';
 
-/* Landing Page Header Font */
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+/* Heading Font */
+@font-face {
+    font-family: 'Bambino';
+      src: url("../src/assets/fonts/Bambino.woff") format("woff");
+}
 
 /* Body Font */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
