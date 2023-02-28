@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+  return (
+    <>
+      <Link to="/main">Home</Link>
+      <Link to="/login">Login</Link>
+    </>
+  );
+};
 
-    return (
-        <>
-          <Link to="/main">Home</Link>
-          <Link to="/login">Login</Link>
-          </>
-    );
-  }
-  
-  export default NavBar;
+export default NavBar;
