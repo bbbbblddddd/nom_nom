@@ -59,7 +59,7 @@ NomNom is a web application built with React and Java (Spring) for our group cap
 To run this app, you need to set up the client and server sides of the app: 
 * Install the dependencies in the 'client' directory:
   ```sh
-  pnpm install
+  npm install
   ```
 
 * Then run the client web application in development:
