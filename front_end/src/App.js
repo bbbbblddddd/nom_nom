@@ -3,13 +3,7 @@ import NomNomContainer from './container/NomNomContainer';
 
 
 function App() {
-  return (
-
-    <>
-     <NomNomContainer />
-    </>
-
-    )
+  return <NomNomContainer />;
 }
 
 export default App;
