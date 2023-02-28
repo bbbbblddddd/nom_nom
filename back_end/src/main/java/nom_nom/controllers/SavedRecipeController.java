@@ -32,5 +32,5 @@ public class SavedRecipeController {
             savedRecipeRepository.save(savedRecipe);
             return new ResponseEntity<>(savedRecipe, HttpStatus.CREATED);
         }
-    }
+
 }

@@ -1,5 +1,9 @@
 package nom_nom.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +17,16 @@ public class SavedRecipe {
     private String review;
     @Column(name = "rating")
     private int rating;
+
+    @JsonIgnoreProperties({"saved_recipes"})
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @JsonIgnoreProperties({"saved_recipes"})
+    @ManyToOne
+    @JoinColumn(name = "saved_recipe_id", nullable = false)
+    private Recipe recipe;
 
     public SavedRecipe(Long id, String review, int rating) {
         this.review = review;

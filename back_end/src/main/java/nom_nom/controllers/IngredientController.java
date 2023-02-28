@@ -31,4 +31,4 @@ public class IngredientController {
             return new ResponseEntity<>(ingredient, HttpStatus.CREATED);
         }
     }
-}
+

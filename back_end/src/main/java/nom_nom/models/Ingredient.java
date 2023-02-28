@@ -1,5 +1,7 @@
 package nom_nom.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,11 @@ public abstract class Ingredient {
     private Long recipe_id;
     @Column(name = "food_type")
     private FoodType foodType;
+
+    @JsonIgnoreProperties({"ingredients"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipe;
 
     public Ingredient(String name, String image_url, Long recipe_id, FoodType foodType) {
         this.name = name;

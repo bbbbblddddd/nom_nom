@@ -1,6 +1,11 @@
 package nom_nom.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,13 +19,17 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @JsonBackReference
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<SavedRecipe> savedRecipes;
+    private List<Recipe> recipes;
+    public User() {
+    }
     public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public User() {
-    }
 
     public String getEmail() {
         return email;
@@ -46,4 +55,11 @@ public class User {
         this.id = id;
     }
 
+    public List<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
+    }
 }
