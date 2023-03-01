@@ -2,25 +2,26 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
-    <div className="flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 to-yellow-300 p-10 text-center">
+    <div className="relative flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 to-yellow-300 p-10 text-center">
       <h1 className="body-font animate__bounceInDown font-nomnom text-9xl text-white animate__animated">
         nomnom.
       </h1>
+      <p className="body-font animate__pulse flex justify-center p-1 font-body text-3xl text-orange-600 animate__animated">
+        Cooking made fun!
+      </p>
+      <br />
       <div className="flex justify-center">
-        <p className="body-font animate__pulse p-1 font-body text-3xl animate__animated">
-          Cooking made fun!
+        <p className="text-1xl mr-1 mt-0.5 font-nomnombold">nomnom.</p>
+        <p className="body-font text-1xl font-body">
+          is an educational app that turns cooking into a fun group activity between grown-up and
+          and child.
         </p>
       </div>
       <br />
-      <p className="body-font text-1xl font-body">
-        NomNom is an educational app that turns cooking into a fun group activity between parent and
-        child!
-      </p>
-      <br />
-      <div className="mx-auto inline-flex h-80 w-full items-center justify-center gap-20">
+      <div className="z-0 mx-auto inline-flex h-80 w-full items-center justify-center gap-20">
         <Link
           to="/login"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
           Login
           <br />
           <div className="mt-auto p-2">
@@ -41,7 +42,7 @@ const Welcome = () => {
         </Link>
         <Link
           to="/main"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
           Search
           <br />
           Recipes
@@ -62,6 +63,13 @@ const Welcome = () => {
             </svg>
           </div>
         </Link>
+      </div>
+      <div>
+        <img
+          className="animate__slideInUp absolute left-12 bottom-0 z-40 flex h-80 max-w-full animate__animated"
+          src="https://nomnomcc.s3.amazonaws.com/nomnomwelcome.png"
+          alt="chefs"
+        />
       </div>
     </div>
   );
