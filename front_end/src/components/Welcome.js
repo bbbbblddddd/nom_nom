@@ -21,17 +21,17 @@ const Welcome = () => {
       <div className="z-0 mx-auto inline-flex h-80 w-full items-center justify-center gap-20">
         <Link
           to="/login"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-[#ffe45c]">
           Login
           <br />
-          <div className="mt-auto p-2">
+          <div className="mt-auto p-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="inline-flex h-6 w-6">
+              className="inline-flex h-8 w-8">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -41,8 +41,8 @@ const Welcome = () => {
           </div>
         </Link>
         <Link
-          to="/main"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+          to="/allrecipes"
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-[#ffe45c]">
           Search
           <br />
           Recipes
@@ -54,7 +54,7 @@ const Welcome = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="h-6 w-6">
+              className="h-8 w-8">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
