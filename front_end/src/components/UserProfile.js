@@ -1,12 +1,12 @@
-import NavBar from "./NavBar"
+import NavBar from './NavBar';
 
 const UserProfile = () => {
-    return(
-        <>
-        <NavBar />
-        <p>I'm the user profile page</p>
-        </>
-    )
-}
+  return (
+    <>
+      <NavBar />
+      <p>I&apos;m the user profile page</p>
+    </>
+  );
+};
 
-export default UserProfile
+export default UserProfile;
