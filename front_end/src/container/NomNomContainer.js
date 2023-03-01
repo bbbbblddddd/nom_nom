@@ -1,8 +1,9 @@
 import Login from '../components/Login';
-import Main from '../components/Main';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from '../components/Welcome';
 import AllRecipes from '../components/AllRecipes';
+import CreateRecipe from '../components/CreateRecipe';
+import UserProfile from '../components/UserProfile';
 // import { useState } from "react";
 
 const NomNomContainer = () => {
@@ -12,8 +13,9 @@ const NomNomContainer = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/main" element={<Main />} />
           <Route path="/allrecipes" element={<AllRecipes />} />
+          <Route path="/create" element={<CreateRecipe />} />
+          <Route path="/profile" element={<UserProfile />} />
         </Routes>
       </Router>
     </>
