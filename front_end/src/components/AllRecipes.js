@@ -43,9 +43,7 @@
 
 //   const [allRecipes, setAllRecipes] = useState(recipes);
 
-//   return (
-//     <p> All Recipes List </p>
-//   )
+//   return <p> All Recipes List </p>;
 // };
 
 // export default AllRecipes;

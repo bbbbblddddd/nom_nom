@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -10,7 +11,9 @@ module.exports = {
       },
       animatedSettings: {
         animatedSpeed: 1200,
-        animationDelaySpeed: 500
+        animationDelaySpeed: 500,
+        bounceInDelaySpeed: 3000,
+        classes: ['bounceIn', 'speedInLeft']
       },
       backgroundImage: {
         food_background: "url('../src/assets/food_background.jpg')"

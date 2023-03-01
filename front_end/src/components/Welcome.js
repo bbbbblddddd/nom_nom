@@ -2,36 +2,38 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
-    <div className="relative flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 via-orange-400 to-yellow-300 p-10 text-center">
-      <h1 className="body-font animate__bounceInDown font-nomnom text-9xl text-white animate__animated">
-        nomnom.
-      </h1>
-      <p className="body-font animate__pulse flex justify-center p-1 font-body text-3xl text-orange-600 animate__animated">
+    <div className="relative flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 via-[#f4a134] to-yellow-300 p-10 text-center">
+      <div className="flex h-40 justify-center">
+        <h1 className="body-font animate__bounceInDown font-nomnom text-[140px] text-white animate__animated">
+          nomnom.
+        </h1>
+      </div>
+      <p className="animate__pulse animate__delay-2s body-font flex justify-center p-1 font-body text-3xl text-white animate__animated">
         Cooking made fun!
       </p>
       <br />
-      <div className="flex justify-center">
-        <p className="text-1xl mr-1 mt-0.5 font-nomnombold">nomnom.</p>
-        <p className="body-font text-1xl font-body">
+      <div className="flex justify-center pt-10">
+        <p className="text-1xl mr-1 mt-0.5 font-nomnombold text-white">nomnom.</p>
+        <p className="body-font text-1xl font-body text-white">
           is an educational app that turns cooking into a fun group activity between grown-up and
           and child.
         </p>
       </div>
       <br />
-      <div className="z-0 mx-auto inline-flex h-80 w-full items-center justify-center gap-20">
+      <div className="z-0 mx-auto mb-20 inline-flex h-60 w-full items-center justify-center gap-20">
         <Link
           to="/login"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-[#ffe45c]">
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
           Login
           <br />
-          <div className="mt-auto p-3">
+          <div className="mt-auto p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="inline-flex h-8 w-8">
+              className="inline-flex h-6 w-6">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -41,8 +43,8 @@ const Welcome = () => {
           </div>
         </Link>
         <Link
-          to="/allrecipes"
-          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-[#ffe45c]">
+          to="/main"
+          className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
           Search
           <br />
           Recipes
@@ -54,7 +56,7 @@ const Welcome = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="h-8 w-8">
+              className="h-6 w-6">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

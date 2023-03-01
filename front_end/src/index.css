@@ -6,14 +6,14 @@
 
 /* Heading Font */
 @font-face {
-    font-family: 'Bambino';
-      src: url("../src/assets/fonts/Bambino.woff") format("woff");
+  font-family: 'Bambino';
+  src: url('../src/assets/fonts/Bambino.woff') format('woff');
 }
 
 /* Bold Font */
 @font-face {
   font-family: 'BambinoBold';
-    src: url("../src/assets/fonts/BambinoBold.woff") format("woff");
+  src: url('../src/assets/fonts/BambinoBold.woff') format('woff');
 }
 
 /* Body Font */
