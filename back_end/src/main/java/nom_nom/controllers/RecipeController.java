@@ -30,4 +30,4 @@ public class RecipeController {
             return new ResponseEntity<>(recipe, HttpStatus.CREATED);
         }
     }
-}
+

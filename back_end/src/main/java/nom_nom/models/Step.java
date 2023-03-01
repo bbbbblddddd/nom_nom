@@ -1,9 +1,11 @@
 package nom_nom.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "saved recipes")
+@Table(name = "saved_recipes")
 public class Step {
 
     @Id
@@ -14,15 +16,24 @@ public class Step {
     @Column(name = "description")
     private String description;
 
-    private Long recipe_id;
 
-    private Long tip_id;
 
-    public Step(int stepNum, String description, Long recipe_id, Long tip_id) {
+    @JsonIgnoreProperties({"saved_recipes"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipe;
+
+    @JsonIgnoreProperties({"steps"})
+    @ManyToOne
+    @JoinColumn(name = "tip_id", nullable = false)
+    private Tip tip;
+
+    public Step(int stepNum, String description, Recipe recipe, Tip tip) {
         this.stepNum = stepNum;
         this.description = description;
-        this.recipe_id = recipe_id;
-        this.tip_id = tip_id;
+        this.recipe = recipe;
+        this.tip = tip;
+
     }
 
     public Step() {
@@ -52,20 +63,19 @@ public class Step {
         this.description = description;
     }
 
-    public Long getRecipe_id() {
-        return recipe_id;
+    public Recipe getRecipe() {
+        return recipe;
     }
 
-    public void setRecipe_id(Long recipe_id) {
-        this.recipe_id = recipe_id;
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
-    public Long getTip_id() {
-        return tip_id;
+    public Tip getTip() {
+        return tip;
     }
 
-    public void setTip_id(Long tip_id) {
-        this.tip_id = tip_id;
+    public void setTip(Tip tip) {
+        this.tip = tip;
     }
-
 }

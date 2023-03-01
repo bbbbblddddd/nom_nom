@@ -32,4 +32,4 @@ public class TipController {
         return new ResponseEntity<>(tip, HttpStatus.CREATED);
     }
 }
-}
+

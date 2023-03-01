@@ -1,6 +1,9 @@
 package nom_nom.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tips")
@@ -14,7 +17,12 @@ public class Tip {
     @Column(name = "action")
     private String action;
 
+    @Column(name = "text")
     private String text;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "tip", fetch = FetchType.LAZY)
+    private List<Step> steps;
 
     public Tip(String image_url, String action, String text) {
         this.image_url = image_url;
