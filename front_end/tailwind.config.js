@@ -13,7 +13,7 @@ module.exports = {
         animationDelaySpeed: 500
       },
       backgroundImage: {
-        chefHat: "url('./src/assets/chef-hat-svgrepo-com.png')"
+        food_background: "url('../src/assets/food_background.jpg')"
       }
     }
   },
