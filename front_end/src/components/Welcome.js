@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
-    <div className="relative flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 to-yellow-300 p-10 text-center">
+    <div className="relative flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 via-orange-400 to-yellow-300 p-10 text-center">
       <h1 className="body-font animate__bounceInDown font-nomnom text-9xl text-white animate__animated">
         nomnom.
       </h1>
@@ -66,7 +66,7 @@ const Welcome = () => {
       </div>
       <div>
         <img
-          className="animate__slideInUp absolute left-12 bottom-0 z-40 flex h-80 max-w-full animate__animated"
+          className="animate__bounceInLeft animate__delay-1s absolute left-12 -bottom-1 z-40 flex h-80 max-w-full animate__animated"
           src="https://nomnomcc.s3.amazonaws.com/nomnomwelcome.png"
           alt="chefs"
         />
