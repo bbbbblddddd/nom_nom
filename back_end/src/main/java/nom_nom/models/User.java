@@ -21,8 +21,21 @@ public class User {
 
     @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<SavedRecipe> savedRecipes;
+    private List<Review> reviews;
+
+    @JsonIgnoreProperties({"users"})
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "saved_recipes",
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "recipe_id", nullable = false, updatable = false)}
+    )
     private List<Recipe> recipes;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<CustomRecipe> customRecipes;
     public User() {
     }
     public User(String email, String password) {

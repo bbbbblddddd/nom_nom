@@ -17,6 +17,7 @@ public class Tip {
     @Column(name = "action")
     private String action;
 
+    @Column(name = "text")
     private String text;
 
     @JsonBackReference

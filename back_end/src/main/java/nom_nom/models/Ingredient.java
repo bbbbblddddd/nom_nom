@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ingredients")
-public abstract class Ingredient {
+public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,21 +15,29 @@ public abstract class Ingredient {
     private String name;
     @Column(name = "image_url")
     private String image_url;
-    @Column(name = "recipe_id")
-    private Long recipe_id;
+
     @Column(name = "food_type")
     private FoodType foodType;
+
+    @Column(name = "quantity")
+    private String quantity;
+
+    @Column(name = "unit")
+    private Unit unit;
 
     @JsonIgnoreProperties({"ingredients"})
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-    public Ingredient(String name, String image_url, Long recipe_id, FoodType foodType) {
+
+
+    public Ingredient(String name, String image_url, FoodType foodType, String quantity, Unit unit) {
         this.name = name;
         this.image_url = image_url;
-        this.recipe_id = recipe_id;
         this.foodType = foodType;
+        this.quantity = quantity;
+        this.unit = unit;
     }
 
     public Long getId() {
@@ -56,13 +64,6 @@ public abstract class Ingredient {
         this.image_url = image_url;
     }
 
-    public Long getRecipe_id() {
-        return recipe_id;
-    }
-
-    public void setRecipe_id(Long recipe_id) {
-        this.recipe_id = recipe_id;
-    }
 
     public FoodType getFoodType() {
         return foodType;
@@ -72,4 +73,19 @@ public abstract class Ingredient {
         this.foodType = foodType;
     }
 
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
 }

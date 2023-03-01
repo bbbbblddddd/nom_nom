@@ -48,7 +48,7 @@ public class Recipe {
 
     @JsonBackReference
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
-    private List<SavedRecipe> savedRecipes;
+    private List<Review> reviews;
 
 
 

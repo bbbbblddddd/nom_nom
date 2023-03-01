@@ -1,14 +1,12 @@
 package nom_nom.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "saved_recipes")
-public class SavedRecipe {
+@Table(name = "reviews")
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,22 +16,25 @@ public class SavedRecipe {
     @Column(name = "rating")
     private int rating;
 
-    @JsonIgnoreProperties({"saved_recipes"})
+    @JsonIgnoreProperties({"reviews"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
+    private Recipe recipe;
+
+    @JsonIgnoreProperties({"reviews"})
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @JsonIgnoreProperties({"saved_recipes"})
-    @ManyToOne
-    @JoinColumn(name = "saved_recipe_id", nullable = false)
-    private Recipe recipe;
 
-    public SavedRecipe(Long id, String review, int rating) {
+    public Review(Long id, String review, int rating, Recipe recipe, User user) {
         this.review = review;
         this.rating = rating;
+        this.recipe = recipe;
+        this.user = user;
     }
 
-    public SavedRecipe() {
+    public Review() {
     }
 
     public Long getId() {
@@ -60,6 +61,21 @@ public class SavedRecipe {
         this.rating = rating;
     }
 
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
 
 
