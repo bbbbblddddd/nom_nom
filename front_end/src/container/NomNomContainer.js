@@ -1,7 +1,7 @@
-import Login from '../components/Login';
+import Login from '../components/user/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from '../components/Welcome';
-import AllRecipes from '../components/AllRecipes';
+import AllRecipes from '../components/recipes/AllRecipes';
 import CreateRecipe from '../components/CreateRecipe';
 import UserProfile from '../components/UserProfile';
 
