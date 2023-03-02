@@ -12,7 +12,7 @@ module.exports = {
       animatedSettings: {
         animatedSpeed: 1200,
         animationDelaySpeed: 500,
-        bounceInDelaySpeed: 3000,
+        DelaySpeed: 3000,
         classes: ['bounceIn', 'speedInLeft']
       },
       backgroundImage: {
