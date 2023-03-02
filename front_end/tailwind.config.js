@@ -7,7 +7,8 @@ module.exports = {
       fontFamily: {
         nomnom: "'Bambino', 'sans-serif'",
         nomnombold: "'BambinoBold', 'sans-serif'",
-        body: "'Varela Round', 'sans-serif'"
+        body: "'Varela Round', 'sans-serif'",
+        nunito: "'Nunito', 'sans-serif'"
       },
       animatedSettings: {
         animatedSpeed: 1200,
