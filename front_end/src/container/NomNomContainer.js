@@ -4,8 +4,43 @@ import Welcome from '../components/Welcome';
 import AllRecipes from '../components/recipes/AllRecipes';
 import CreateRecipe from '../components/CreateRecipe';
 import UserProfile from '../components/UserProfile';
+import { useState } from 'react';
+import Request from '../helpers/Request';
 
 const NomNomContainer = () => {
+
+  const [allRecipes, setAllRecipes] = useState([])
+  const [profile, setProfile] = useState([])
+  const [customRecipes, setCustomRecipes] = useState([])
+  const [allCustomRecipes, setAllCustomRecipes] = useState([])
+  const [allFaveRecipes, setAllFaveRecipes] = useState([])
+
+  useEffect(() => {
+    const request = new Request();
+
+    const recipePromise = request.get('/api/recipes');
+
+    Promise([allRecipePromise])
+    .then((data) => {
+      setAllRecipes(data[0])
+    })
+  },[])
+
+  // const findAllRecipesById = (id) => {
+  //   return allRecipes.find((recipe) => {
+  //     return recipe.id === parseInt(id);
+  // })
+  // }
+
+  }
+  
+
+
+
+
+
+
+
   return (
     <>
       <Router>
