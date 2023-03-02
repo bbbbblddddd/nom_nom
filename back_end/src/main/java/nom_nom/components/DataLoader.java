@@ -1,6 +1,7 @@
 package nom_nom.components;
 
 import nom_nom.models.User;
+import nom_nom.repositories.RecipeRepository;
 import nom_nom.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -13,6 +14,10 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    RecipeRepository recipeRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
