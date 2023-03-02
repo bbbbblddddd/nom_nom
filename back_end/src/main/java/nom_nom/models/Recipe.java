@@ -1,6 +1,7 @@
 package nom_nom.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -17,9 +18,9 @@ public class Recipe {
     @Column(name = "image_url")
     private String image_url;
     @Column(name = "prep_time")
-    private String prepTime;
+    private int prepTime;
     @Column(name = "cook_time")
-    private String cookTime;
+    private int cookTime;
     @Column(name = "servings")
     private int servings;
     @Column(name="meal_type")
@@ -38,7 +39,7 @@ public class Recipe {
     )
     private List<User> users;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Ingredient> ingredients;
 
@@ -52,7 +53,7 @@ public class Recipe {
 
 
 
-    public Recipe(String name, String image_url, String prepTime, String cookTime, int servings, MealType mealType, String extraEquip) {
+    public Recipe(String name, String image_url, int prepTime, int cookTime, int servings, MealType mealType, String extraEquip) {
         this.name = name;
         this.image_url = image_url;
         this.prepTime = prepTime;
@@ -89,19 +90,19 @@ public class Recipe {
         this.image_url = image_url;
     }
 
-    public String getPrepTime() {
+    public int getPrepTime() {
         return prepTime;
     }
 
-    public void setPrepTime(String prepTime) {
+    public void setPrepTime(int prepTime) {
         this.prepTime = prepTime;
     }
 
-    public String getCookTime() {
+    public int getCookTime() {
         return cookTime;
     }
 
-    public void setCookTime(String cookTime) {
+    public void setCookTime(int cookTime) {
         this.cookTime = cookTime;
     }
 
@@ -135,5 +136,33 @@ public class Recipe {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public void addIngredient(Ingredient ingredient) {
+        ingredients.add(ingredient);
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> steps) {
+        this.steps = steps;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }

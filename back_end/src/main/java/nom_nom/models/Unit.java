@@ -4,7 +4,8 @@ public enum Unit {
 
     CUP,
     GRAMS,
-    TBS,
-    LITRE,
-
+    TABLESPOON,
+    TEASPOON,
+    SINGLE,
+    MILLILITERS
 }

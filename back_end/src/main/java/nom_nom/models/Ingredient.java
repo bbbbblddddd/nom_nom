@@ -20,7 +20,7 @@ public class Ingredient {
     private FoodType foodType;
 
     @Column(name = "quantity")
-    private String quantity;
+    private double quantity;
 
     @Column(name = "unit")
     private Unit unit;
@@ -30,9 +30,10 @@ public class Ingredient {
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
+    public Ingredient() {
+    }
 
-
-    public Ingredient(String name, String image_url, FoodType foodType, String quantity, Unit unit) {
+    public Ingredient(String name, String image_url, FoodType foodType, double quantity, Unit unit) {
         this.name = name;
         this.image_url = image_url;
         this.foodType = foodType;
@@ -81,11 +82,19 @@ public class Ingredient {
         this.unit = unit;
     }
 
-    public String getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }

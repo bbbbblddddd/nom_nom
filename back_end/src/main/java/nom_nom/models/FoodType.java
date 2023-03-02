@@ -7,8 +7,9 @@ public enum FoodType {
     DAIRY,
     VEGETABLE,
     MEAT,
-    CARBOHYDRATES,
     FISH,
     HERBS,
+    GRAINS,
+    LEGUME
 
 }
