@@ -1,6 +1,7 @@
 package nom_nom.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -38,7 +39,7 @@ public class Recipe {
     )
     private List<User> users;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Ingredient> ingredients;
 
@@ -139,5 +140,29 @@ public class Recipe {
 
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> steps) {
+        this.steps = steps;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }

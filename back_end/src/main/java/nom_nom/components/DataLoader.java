@@ -57,13 +57,15 @@ public class DataLoader implements ApplicationRunner {
         Recipe chickpeas = new Recipe("BBQ Chickpeas", "https://nomnomcc.s3.amazonaws.com/bbqchickpeas.jpg", 10, 60, 4, MealType.SNACK, "Can opener, sieve, mixing bowl, baking tray");
         recipeRepository.save(chickpeas);
 
-//        Ingredient banana = new Ingredient("banana",	"", FoodType.FRUIT,	1, Unit.SINGLE);
-//        ingredientRepository.save(banana);
-//        fruitSkewers.addIngredient(banana);
-//
-//        Ingredient strawberry = new Ingredient("strawberries","", FoodType.FRUIT,1, Unit.CUP);
-//        ingredientRepository.save(strawberry);
-//        fruitSkewers.addIngredient(strawberry);
+        Ingredient banana = new Ingredient("banana",	"https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT,1, Unit.SINGLE);
+        banana.setRecipe(fruitSkewers);
+        ingredientRepository.save(banana);
+
+
+        Ingredient strawberry = new Ingredient("strawberries","https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT,1, Unit.CUP);
+        strawberry.setRecipe(fruitSkewers);
+        ingredientRepository.save(strawberry);
+
 
 
 

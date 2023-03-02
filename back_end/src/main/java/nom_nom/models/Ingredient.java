@@ -30,7 +30,8 @@ public class Ingredient {
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-
+    public Ingredient() {
+    }
 
     public Ingredient(String name, String image_url, FoodType foodType, double quantity, Unit unit) {
         this.name = name;
@@ -87,5 +88,13 @@ public class Ingredient {
 
     public void setQuantity(double quantity) {
         this.quantity = quantity;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }
