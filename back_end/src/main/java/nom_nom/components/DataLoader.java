@@ -2,6 +2,7 @@ package nom_nom.components;
 
 import nom_nom.models.*;
 import nom_nom.repositories.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
+
     @Autowired
     RecipeRepository recipeRepository;
     @Autowired
@@ -21,6 +23,7 @@ public class DataLoader implements ApplicationRunner {
     StepRepository stepRepository;
     @Autowired
     TipRepository tipRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
@@ -61,17 +64,9 @@ public class DataLoader implements ApplicationRunner {
         banana.setRecipe(fruitSkewers);
         ingredientRepository.save(banana);
 
-
         Ingredient strawberry = new Ingredient("strawberries","https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT,1, Unit.CUP);
         strawberry.setRecipe(fruitSkewers);
         ingredientRepository.save(strawberry);
-
-
-
-
-
-
-
 
     }
 }

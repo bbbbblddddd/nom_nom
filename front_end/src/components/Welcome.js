@@ -43,7 +43,7 @@ const Welcome = () => {
           </div>
         </Link>
         <Link
-          to="/main"
+          to="/allrecipes"
           className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-orange-500 shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
           Search
           <br />
