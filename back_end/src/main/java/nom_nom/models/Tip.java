@@ -1,6 +1,7 @@
 package nom_nom.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Tip {
     @Column(name = "text")
     private String text;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"tip"})
     @OneToMany(mappedBy = "tip", fetch = FetchType.LAZY)
     private List<Step> steps;
 
@@ -65,4 +66,11 @@ public class Tip {
         this.text = text;
     }
 
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> steps) {
+        this.steps = steps;
+    }
 }
