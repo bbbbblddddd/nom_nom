@@ -2,20 +2,20 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
-    <div className="align-center relative flex h-72 min-h-screen flex-col justify-center bg-[#f35b04] text-center">
-      <div className="mx-auto w-4/6 rounded-3xl bg-white px-12 pt-10">
+    <div className="align-center relative flex h-72 min-h-screen flex-col justify-center bg-food_background bg-cover text-center">
+      <div className="mx-auto w-4/6 rounded-3xl bg-[#fffffff3] px-12 pt-10">
         <div className="flex h-40 justify-center">
-          <h1 className="animate__bounceInDown font-nomnombold text-[140px] tracking-tighter text-[#3d348b] animate__animated">
+          <h1 className="animate__bounceInDown font-nomnombold text-[140px] tracking-tighter text-[#ee6352] animate__animated">
             nomnom.
           </h1>
         </div>
-        <p className="animate__pulse animate__delay-2s body-font font-nunito flex justify-center text-[32px] font-bold text-[#f18701] animate__animated">
+        <p className="animate__pulse animate__delay-1s body-font flex justify-center font-nunito text-[32px] font-bold text-[#ee6352] animate__animated">
           Cooking made fun!
         </p>
         <br />
         <div className="flex justify-center pt-5">
-          <p className="mr-1 mt-0.5 font-nomnombold text-[22px] text-[#f7b801]">nomnom.</p>
-          <p className="body-font font-nunito text-[22px] text-[#f7b801]">
+          <p className="mt-0.5 font-nomnombold text-[22px] text-[#ee6352]">nomnom.</p>
+          <p className="body-font font-nunito text-[22px] text-[#ee6352]">
             is an educational app that turns cooking into a fun group activity between grown-up and
             and child.
           </p>
@@ -24,7 +24,7 @@ const Welcome = () => {
         <div className="z-0 mx-auto mb-20 inline-flex h-60 w-full items-center justify-center gap-20">
           <Link
             to="/login"
-            className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-[#f35b04] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+            className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#fac05e] p-20 text-center font-nomnom text-2xl text-[#ee6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
             Login
             <br />
             <div className="mt-auto p-2">
@@ -45,7 +45,7 @@ const Welcome = () => {
           </Link>
           <Link
             to="/allrecipes"
-            className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-[#f35b04] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+            className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#fac05e] p-20 text-center font-nomnom text-2xl text-[#ee6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
             Search
             <br />
             Recipes
@@ -66,13 +66,6 @@ const Welcome = () => {
               </svg>
             </div>
           </Link>
-        </div>
-        <div>
-          <img
-            className="animate__bounceInLeft animate__delay-1s absolute left-12 -bottom-1 z-40 flex h-80 max-w-full animate__animated"
-            src="https://nomnomcc.s3.amazonaws.com/nomnomwelcome.png"
-            alt="chefs"
-          />
         </div>
       </div>
     </div>
