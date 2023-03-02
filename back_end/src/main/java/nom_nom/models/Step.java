@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "saved_recipes")
+@Table(name = "steps")
 public class Step {
 
     @Id
@@ -20,20 +20,19 @@ public class Step {
 
     @JsonIgnoreProperties({"saved_recipes"})
     @ManyToOne
-    @JoinColumn(name = "recipe_id", nullable = false)
+    @JoinColumn(name = "recipe_id", nullable = true)
     private Recipe recipe;
 
     @JsonIgnoreProperties({"steps"})
     @ManyToOne
-    @JoinColumn(name = "tip_id", nullable = false)
+    @JoinColumn(name = "tip_id", nullable = true)
     private Tip tip;
 
-    public Step(int stepNum, String description, Recipe recipe, Tip tip) {
+    public Step(int stepNum, String description) {
         this.stepNum = stepNum;
         this.description = description;
-        this.recipe = recipe;
-        this.tip = tip;
-
+        this.tip = null;
+        this.recipe = null;
     }
 
     public Step() {

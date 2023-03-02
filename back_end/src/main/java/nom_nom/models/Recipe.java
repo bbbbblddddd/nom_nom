@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -61,6 +62,8 @@ public class Recipe {
         this.servings = servings;
         this.mealType = mealType;
         this.extraEquip = extraEquip;
+        this.users = new ArrayList<>();
+        this.steps = new ArrayList<>();
     }
 
     public Recipe() {
@@ -138,6 +141,10 @@ public class Recipe {
         this.users = users;
     }
 
+    public void addUser(User user){
+        this.users.add(user);
+    }
+
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
     }
@@ -156,6 +163,10 @@ public class Recipe {
 
     public void setSteps(List<Step> steps) {
         this.steps = steps;
+    }
+
+    public void addStep(Step step){
+        this.steps.add(step);
     }
 
     public List<Review> getReviews() {
