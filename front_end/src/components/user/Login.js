@@ -30,7 +30,7 @@ const Login = () => {
           </button>
           <br />
           <p>
-            Don't have an account?
+            Dont have an account?
             <a href="#" className="font-bold text-blue-500 hover:text-red-600 hover:underline">
               Sign up
             </a>
