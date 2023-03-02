@@ -17,9 +17,9 @@ public class Recipe {
     @Column(name = "image_url")
     private String image_url;
     @Column(name = "prep_time")
-    private String prepTime;
+    private int prepTime;
     @Column(name = "cook_time")
-    private String cookTime;
+    private int cookTime;
     @Column(name = "servings")
     private int servings;
     @Column(name="meal_type")
@@ -52,7 +52,7 @@ public class Recipe {
 
 
 
-    public Recipe(String name, String image_url, String prepTime, String cookTime, int servings, MealType mealType, String extraEquip) {
+    public Recipe(String name, String image_url, int prepTime, int cookTime, int servings, MealType mealType, String extraEquip) {
         this.name = name;
         this.image_url = image_url;
         this.prepTime = prepTime;
@@ -89,19 +89,19 @@ public class Recipe {
         this.image_url = image_url;
     }
 
-    public String getPrepTime() {
+    public int getPrepTime() {
         return prepTime;
     }
 
-    public void setPrepTime(String prepTime) {
+    public void setPrepTime(int prepTime) {
         this.prepTime = prepTime;
     }
 
-    public String getCookTime() {
+    public int getCookTime() {
         return cookTime;
     }
 
-    public void setCookTime(String cookTime) {
+    public void setCookTime(int cookTime) {
         this.cookTime = cookTime;
     }
 
@@ -135,5 +135,9 @@ public class Recipe {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public void addIngredient(Ingredient ingredient) {
+        ingredients.add(ingredient);
     }
 }
