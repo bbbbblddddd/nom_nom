@@ -66,13 +66,7 @@ const Welcome = () => {
           </div>
         </Link>
       </div>
-      <div>
-        <img
-          className="animate__bounceInLeft animate__delay-1s absolute left-12 -bottom-1 z-40 flex h-80 max-w-full animate__animated"
-          src="https://nomnomcc.s3.amazonaws.com/nomnomwelcome.png"
-          alt="chefs"
-        />
-      </div>
+     w
     </div>
   );
 };
