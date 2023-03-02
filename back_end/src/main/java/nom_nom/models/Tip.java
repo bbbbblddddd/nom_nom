@@ -22,13 +22,14 @@ public class Tip {
     private String text;
 
     @JsonIgnoreProperties({"tip"})
-    @OneToMany(mappedBy = "tip", fetch = FetchType.LAZY)
-    private List<Step> steps;
+    @OneToOne(mappedBy = "tip", fetch = FetchType.LAZY)
+    private Step step;
 
-    public Tip(String image_url, String action, String text) {
+    public Tip(String image_url, String action, String text, Step step) {
         this.image_url = image_url;
         this.action = action;
         this.text = text;
+        this.step = step;
     }
 
     public Tip() {
@@ -66,11 +67,13 @@ public class Tip {
         this.text = text;
     }
 
-    public List<Step> getSteps() {
-        return steps;
+    public Step getStep() {
+        return step;
     }
 
-    public void setSteps(List<Step> steps) {
-        this.steps = steps;
+    public void setStep(Step step) {
+        this.step = step;
     }
 }
+
+

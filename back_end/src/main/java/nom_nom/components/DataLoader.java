@@ -31,33 +31,43 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(jill);
 
         Recipe fruitSkewers = new Recipe("Fruit skewers with yogurt dip", "https://nomnomcc.s3.amazonaws.com/fruitskewerswithyoghurtdip.jpg", 20, 0, 4, MealType.DESSERT,"plastic or metal straw, mixing bowl, measuring cups and spoons, wooden skewers");
+        fruitSkewers.addUser(jill);
         recipeRepository.save(fruitSkewers);
 
         Recipe ricePaperRolls = new Recipe("Rice paper rolls", "https://nomnomcc.s3.amazonaws.com/ricepaperrolls.jpg", 20, 3, 4, MealType.STARTER,"grater");
+        ricePaperRolls.addUser(jill);
         recipeRepository.save(ricePaperRolls);
 
         Recipe nutellaSprinkles = new Recipe("Nutella fairy bread", "https://nomnomcc.s3.amazonaws.com/nutellafairybread.jpg", 5, 0, 6, MealType.DESSERT, "pizza cutter");
+        nutellaSprinkles.addUser(jill);
         recipeRepository.save(nutellaSprinkles);
 
         Recipe chickenNuggets = new Recipe("Healthy chicken nuggets", "https://nomnomcc.s3.amazonaws.com/healthychickennuggets.jpg", 20, 25, 4, MealType.MAIN,"mixing bowls, baking tray");
+        chickenNuggets.addUser(jill);
         recipeRepository.save(chickenNuggets);
 
         Recipe quesadillas = new Recipe("Cheesy black bean quesadilla", "https://nomnomcc.s3.amazonaws.com/cheesyblackbeanquesadillas.jpg", 15, 10, 2, MealType.MAIN, "can opener, sieve, grater, potato masher, pizza cutter");
+        quesadillas.addUser(jill);
         recipeRepository.save(quesadillas);
 
         Recipe fishcakes = new Recipe("Salmon fishcakes", "https://nomnomcc.s3.amazonaws.com/salmonfishcakes.jpg", 30, 5, 2, MealType.MAIN,"rolling pin, mixing bowl");
+        fishcakes.addUser(jill);
         recipeRepository.save(fishcakes);
 
         Recipe pizza = new Recipe("Pizza with homemade sauce", "https://nomnomcc.s3.amazonaws.com/pizzawithhomemadesauce.jpg", 30, 20, 4, MealType.MAIN, "mixing bowls, saucepan, baking tray, rolling pin");
+        pizza.addUser(jill);
         recipeRepository.save(pizza);
 
         Recipe fishParcel = new Recipe("Korean Salmon Parcels", "https://nomnomcc.s3.amazonaws.com/koreansalmonparcels.jpg", 20, 25, 4, MealType.MAIN, "measuring jug, baking paper, baking tray");
+        fishParcel.addUser(jill);
         recipeRepository.save(fishParcel);
 
         Recipe appleBite = new Recipe("Easy Apple Bites", "https://nomnomcc.s3.amazonaws.com/easyapplebites.jpg", 10, 0, 2, MealType.SNACK, "Cutting board, apple corer and slicer");
+        appleBite.addUser(jill);
         recipeRepository.save(appleBite);
 
         Recipe chickpeas = new Recipe("BBQ Chickpeas", "https://nomnomcc.s3.amazonaws.com/bbqchickpeas.jpg", 10, 60, 4, MealType.SNACK, "Can opener, sieve, mixing bowl, baking tray");
+        chickpeas.addUser(jill);
         recipeRepository.save(chickpeas);
 
         Ingredient banana = new Ingredient("banana",	"https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT,1, Unit.SINGLE);
@@ -68,6 +78,21 @@ public class DataLoader implements ApplicationRunner {
         strawberry.setRecipe(fruitSkewers);
         ingredientRepository.save(strawberry);
 
+        Ingredient grape = new Ingredient("grapes","https://nomnomcc.s3.amazonaws.com/dummy_food.jpg",FoodType.FRUIT, 0.5, Unit.CUP);
+        grape.setRecipe(fruitSkewers);
+        ingredientRepository.save(grape);
+
+        Ingredient blueberry = new Ingredient("blueberries", "https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT, 0.5, Unit.CUP);
+        blueberry.setRecipe(fruitSkewers);
+        ingredientRepository.save(blueberry);
+
+
+        Step one = new Step( 1, "Lay a chopping board on tea towel to stop it from slipping");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(one);
+//
+//        Tip newTip = new Tip("", "", "", one);
+//        tipRepository.save(newTip);
 
 
     }
