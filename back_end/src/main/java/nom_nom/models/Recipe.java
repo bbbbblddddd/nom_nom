@@ -43,11 +43,11 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Ingredient> ingredients;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Step> steps;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Review> reviews;
 

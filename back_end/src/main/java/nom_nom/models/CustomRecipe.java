@@ -23,11 +23,11 @@ public class CustomRecipe {
     @Column(name = "servings")
     private String servings;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Ingredient> ingredients;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<Step> steps;
 
@@ -106,4 +106,6 @@ public class CustomRecipe {
     public void setUser(User user) {
         this.user = user;
     }
+
+
 }

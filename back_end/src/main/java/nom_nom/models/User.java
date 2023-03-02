@@ -75,4 +75,20 @@ public class User {
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
     }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public List<CustomRecipe> getCustomRecipes() {
+        return customRecipes;
+    }
+
+    public void setCustomRecipes(List<CustomRecipe> customRecipes) {
+        this.customRecipes = customRecipes;
+    }
 }

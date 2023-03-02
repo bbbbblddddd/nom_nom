@@ -68,5 +68,7 @@ public class DataLoader implements ApplicationRunner {
         strawberry.setRecipe(fruitSkewers);
         ingredientRepository.save(strawberry);
 
+
+
     }
 }
