@@ -11,7 +11,7 @@ import RecipeDetail from '../components/recipes/RecipeDetail';
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState({});
   const [customRecipes, setCustomRecipes] = useState([]);
   const [allCustomRecipes, setAllCustomRecipes] = useState([]);
   const [allFaveRecipes, setAllFaveRecipes] = useState([]);
@@ -30,18 +30,18 @@ const NomNomContainer = () => {
     const request = new Request();
 
     request.post('/api/users', user).then(() => {
-      window.location = '/profile';
+      setProfile(user);
     });
   };
 
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login onLogin={handlePost} />} />
         <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
         <Route path="/create" element={<NewCustomRecipe />} />
-        <Route path="/profile" element={<UserProfile />} />
         <Route path="/recipes/:id" element={<RecipeDetail />} />
+        <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>
     </>
   );
