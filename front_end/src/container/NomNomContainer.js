@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Login from '../components/user/Login';
-import { HashRouter as Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import AllRecipes from '../components/recipes/AllRecipes';
 import UserProfile from '../components/user/UserProfile';
 import { useState, useEffect } from 'react';
@@ -25,6 +25,14 @@ const NomNomContainer = () => {
       setAllRecipes(data[0]);
     });
   }, []);
+
+  const handlePost = (user) => {
+    const request = new Request();
+
+    request.post('/api/users', user).then(() => {
+      window.location = '/profile';
+    });
+  };
 
   return (
     <>

@@ -23,7 +23,7 @@ const Welcome = () => {
         <br />
         <div className="z-0 mx-auto mb-20 inline-flex h-60 w-full items-center justify-center gap-20">
           <Link
-            to="/login"
+            to="/main/login"
             className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-[#f35b04] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
             Login
             <br />
@@ -44,7 +44,7 @@ const Welcome = () => {
             </div>
           </Link>
           <Link
-            to="/allrecipes"
+            to="/main/allrecipes"
             className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-yellow-300 p-20 text-center font-nomnom text-2xl text-[#f35b04] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
             Search
             <br />
