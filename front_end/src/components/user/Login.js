@@ -1,43 +1,51 @@
+/* eslint-disable react/no-unescaped-entities */
 const Login = () => {
   return (
-    <>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Nunito:wght@700;800&display=swap"
-          rel="stylesheet"></link>
-      </head>
-      <body>
-        <div className="flex h-72 min-h-screen flex-col justify-center bg-gradient-to-b from-orange-400 to-yellow-300 p-10 text-center">
-          <h1 className="body-font animate__bounceInDown font-nomnom text-9xl text-white animate__animated">
-            Login
+    <div className="flex h-72 min-h-screen flex-col justify-center bg-food_background2 p-10 text-center">
+      <div className="mx-auto flex h-5/6 w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
+        <div className="h-40 flex-col justify-center">
+          <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
+            login
           </h1>
-          <br />
-          <input
-            type="email"
-            placeholder="Enter your email address:"
-            className="placeholder-center mx-auto w-full max-w-md rounded-md border-2 
-         border-gray-400 py-2 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <br />
-          <input
-            type="email"
-            placeholder="Password:"
-            className="placeholder-center mx-auto w-full max-w-md rounded-md border-2 
-         border-gray-400 py-2 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button className="mx-auto max-w-md rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700">
-            Login
-          </button>
-          <br />
-          <p>
-            Dont have an account?
-            <a href="#" className="font-bold text-blue-500 hover:text-red-600 hover:underline">
-              Sign up
-            </a>
-          </p>
+          <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
+            <br />
+            <input
+              type="email"
+              placeholder="Email:"
+              className="placeholder-center body-font mx-auto inline-flex w-full max-w-md rounded-md border-2 border-gray-400 
+         bg-[#cdf18b] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
+            />
+            <br />
+            <input
+              type="email"
+              placeholder="Password:"
+              className="placeholder-center body-font mx-auto mb-10 inline-flex w-full max-w-md rounded-md border-2 
+         border-gray-400 py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
+            />
+            <button className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]">
+              Login
+            </button>
+            <br />
+            <p className="body-font mb-10 flex-col font-nunito">
+              Don't have an account?
+              <br />
+              <a
+                href="#"
+                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                Sign up
+              </a>
+              <br />
+              <br />
+              <a
+                href="/"
+                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                Back
+              </a>
+            </p>
+          </div>
         </div>
-      </body>
-    </>
+      </div>
+    </div>
   );
 };
 

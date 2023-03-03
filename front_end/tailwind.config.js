@@ -7,7 +7,7 @@ module.exports = {
       fontFamily: {
         nomnom: "'Bambino', 'sans-serif'",
         nomnombold: "'BambinoBold', 'sans-serif'",
-        body: "'Varela Round', 'sans-serif'"
+        nunito: "'Nunito', 'sans-serif'"
       },
       animatedSettings: {
         animatedSpeed: 1200,
@@ -16,7 +16,8 @@ module.exports = {
         classes: ['bounceIn', 'speedInLeft']
       },
       backgroundImage: {
-        food_background: "url('../src/assets/food_background.jpg')"
+        food_background: "url('../src/assets/food_background2.png')",
+        food_background2: "url('../src/assets/food_background3.png')"
       }
     }
   },
