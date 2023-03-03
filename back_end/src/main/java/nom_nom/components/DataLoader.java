@@ -27,47 +27,47 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        User jill = new User("jilleatkins@gmail.com", "I<3KFC!");
-        userRepository.save(jill);
-
+        User admin = new User("admin@admin", "admin@admin");
+        userRepository.save(admin);
+        
         Recipe fruitSkewers = new Recipe("Fruit skewers with yogurt dip", "https://nomnomcc.s3.amazonaws.com/fruitskewerswithyoghurtdip.jpg", 20, 0, 4, MealType.DESSERT,"plastic or metal straw, mixing bowl, measuring cups and spoons, wooden skewers");
-        fruitSkewers.addUser(jill);
+        fruitSkewers.addUser(admin);
         recipeRepository.save(fruitSkewers);
 
         Recipe ricePaperRolls = new Recipe("Rice paper rolls", "https://nomnomcc.s3.amazonaws.com/ricepaperrolls.jpg", 20, 3, 4, MealType.STARTER,"grater");
-        ricePaperRolls.addUser(jill);
+        ricePaperRolls.addUser(admin);
         recipeRepository.save(ricePaperRolls);
 
         Recipe nutellaSprinkles = new Recipe("Nutella fairy bread", "https://nomnomcc.s3.amazonaws.com/nutellafairybread.jpg", 5, 0, 6, MealType.DESSERT, "pizza cutter");
-        nutellaSprinkles.addUser(jill);
+        nutellaSprinkles.addUser(admin);
         recipeRepository.save(nutellaSprinkles);
 
         Recipe chickenNuggets = new Recipe("Healthy chicken nuggets", "https://nomnomcc.s3.amazonaws.com/healthychickennuggets.jpg", 20, 25, 4, MealType.MAIN,"mixing bowls, baking tray");
-        chickenNuggets.addUser(jill);
+        chickenNuggets.addUser(admin);
         recipeRepository.save(chickenNuggets);
 
         Recipe quesadillas = new Recipe("Cheesy black bean quesadilla", "https://nomnomcc.s3.amazonaws.com/cheesyblackbeanquesadillas.jpg", 15, 10, 2, MealType.MAIN, "can opener, sieve, grater, potato masher, pizza cutter");
-        quesadillas.addUser(jill);
+        quesadillas.addUser(admin);
         recipeRepository.save(quesadillas);
 
         Recipe fishcakes = new Recipe("Salmon fishcakes", "https://nomnomcc.s3.amazonaws.com/salmonfishcakes.jpg", 30, 5, 2, MealType.MAIN,"rolling pin, mixing bowl");
-        fishcakes.addUser(jill);
+        fishcakes.addUser(admin);
         recipeRepository.save(fishcakes);
 
         Recipe pizza = new Recipe("Pizza with homemade sauce", "https://nomnomcc.s3.amazonaws.com/pizzawithhomemadesauce.jpg", 30, 20, 4, MealType.MAIN, "mixing bowls, saucepan, baking tray, rolling pin");
-        pizza.addUser(jill);
+        pizza.addUser(admin);
         recipeRepository.save(pizza);
 
         Recipe fishParcel = new Recipe("Korean Salmon Parcels", "https://nomnomcc.s3.amazonaws.com/koreansalmonparcels.jpg", 20, 25, 4, MealType.MAIN, "measuring jug, baking paper, baking tray");
-        fishParcel.addUser(jill);
+        fishParcel.addUser(admin);
         recipeRepository.save(fishParcel);
 
         Recipe appleBite = new Recipe("Easy Apple Bites", "https://nomnomcc.s3.amazonaws.com/easyapplebites.jpg", 10, 0, 2, MealType.SNACK, "Cutting board, apple corer and slicer");
-        appleBite.addUser(jill);
+        appleBite.addUser(admin);
         recipeRepository.save(appleBite);
 
         Recipe chickpeas = new Recipe("BBQ Chickpeas", "https://nomnomcc.s3.amazonaws.com/bbqchickpeas.jpg", 10, 60, 4, MealType.SNACK, "Can opener, sieve, mixing bowl, baking tray");
-        chickpeas.addUser(jill);
+        chickpeas.addUser(admin);
         recipeRepository.save(chickpeas);
 
         Ingredient banana = new Ingredient("banana",	"https://nomnomcc.s3.amazonaws.com/dummy_food.jpg", FoodType.FRUIT,1, Unit.SINGLE);

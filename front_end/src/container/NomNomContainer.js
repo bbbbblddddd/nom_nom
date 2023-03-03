@@ -12,7 +12,7 @@ import RecipeDetail from '../components/recipes/RecipeDetail';
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [profile, setProfile] = useState({});
-  const [customRecipes, setCustomRecipes] = useState([]);
+  const [customRecipe, setCustomRecipe] = useState({});
   const [allCustomRecipes, setAllCustomRecipes] = useState([]);
   const [allFaveRecipes, setAllFaveRecipes] = useState([]);
 
@@ -26,18 +26,21 @@ const NomNomContainer = () => {
       setAllRecipes(data);
     });
   }, []);
-  const handlePost = (user) => {
-    const request = new Request();
 
-    request.post('/api/users', user).then(() => {
-      setProfile(user);
+  const handleGetUser = (user) => {
+    const request = new Request();
+    const email = user[0];
+    const password = user[1];
+    const userPromise = request.get('/api/users', email, password);
+    userPromise.then((data) => {
+      setProfile(data);
     });
   };
 
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login onLogin={handlePost} />} />
+        <Route path="/login" element={<Login onLogin={handleGetUser} />} />
         <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
         <Route path="/create" element={<NewCustomRecipe />} />
         <Route path="/recipes/:id" element={<RecipeDetail />} />
