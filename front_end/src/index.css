@@ -10,11 +10,11 @@
   src: url('../src/assets/fonts/Bambino.woff') format('woff');
 }
 
-/* Bold Font */
+/* Bold Heading Font */
 @font-face {
   font-family: 'BambinoBold';
   src: url('../src/assets/fonts/BambinoBold.woff') format('woff');
 }
 
-/* Body Font */
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* Varied Body Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');

@@ -7,7 +7,7 @@ const AllRecipes = ({ recipes }) => {
     return <li key={index}>{recipe.name}</li>;
   });
 
-  return <></>;
+  return <ul>{recipeList}</ul>;
 };
 
 export default AllRecipes;
