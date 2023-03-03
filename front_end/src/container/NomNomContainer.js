@@ -16,15 +16,16 @@ const NomNomContainer = () => {
   const [allCustomRecipes, setAllCustomRecipes] = useState([]);
   const [allFaveRecipes, setAllFaveRecipes] = useState([]);
 
-  // useEffect(() => {
-  //   const request = new Request();
+  useEffect(() => {
+    const request = new Request();
 
-  //   const recipePromise = request.get('/api/recipes');
+    const recipePromise = request.get('/api/recipes');
 
-  //   Promise([allRecipePromise]).then((data) => {
-  //     setAllRecipes(data[0]);
-  //   });
-  // }, []);
+    // Promise([allRecipePromise]).then((data) => {
+    recipePromise.then((data) => {
+      setAllRecipes(data);
+    });
+  }, []);
 
   // const findAllRecipesById = (id) => {
   //   return allRecipes.find((recipe) => {
@@ -38,9 +39,9 @@ const NomNomContainer = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/allrecipes" element={<AllRecipes />} />
+          <Route path="/allrecipes" element={<AllRecipes allRecipes={allRecipes} />} />
           <Route path="/create" element={<CreateRecipe />} />
-          <Route path="/profile" element={<UserProfile />} />
+          {/* <Route path="/profile" element={<UserProfile />} /> */}
         </Routes>
       </Router>
     </>
