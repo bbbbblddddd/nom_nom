@@ -1,13 +1,20 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 
-const AllRecipes = ({ recipes }) => {
-  const recipeList = recipes.map((recipe, index) => {
-    return <li key={index}>{recipe.name}</li>;
+const AllRecipes = ({ allRecipes }) => {
+  const recipeList = allRecipes.map((recipe, index) => {
+    return (
+      <li key={index}>
+        <div>
+          <Recipe recipe={recipe} />
+        </div>
+      </li>
+    );
   });
-
-  return <ul>{recipeList}</ul>;
+  return (
+    <>
+      <ul>{recipeList}</ul>
+    </>
+  );
 };
 
 export default AllRecipes;

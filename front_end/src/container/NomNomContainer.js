@@ -19,13 +19,13 @@ const NomNomContainer = () => {
   useEffect(() => {
     const request = new Request();
 
-    const allRecipePromise = request.get('/api/recipes');
+    const recipePromise = request.get('/api/recipes');
 
-    Promise([allRecipePromise]).then((data) => {
-      setAllRecipes(data[0]);
+    // Promise([allRecipePromise]).then((data) => {
+    recipePromise.then((data) => {
+      setAllRecipes(data);
     });
   }, []);
-
   const handlePost = (user) => {
     const request = new Request();
 
@@ -38,9 +38,9 @@ const NomNomContainer = () => {
     <>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/recipes" element={<AllRecipes />} />
+        <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
         <Route path="/create" element={<NewCustomRecipe />} />
-        <Route path="/profile" element={<UserProfile />} />
+        {/* <Route path="/profile" element={<UserProfile />} /> */}
         <Route path="/recipes/id" element={<RecipeDetail />} />
       </Routes>
     </>
