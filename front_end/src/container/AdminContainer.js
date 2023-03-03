@@ -1,8 +1,4 @@
 const AdminContainer = () => {
-
-    return(
-        <></>
-    )
-}
-
+  return <></>;
+};
 export default AdminContainer;

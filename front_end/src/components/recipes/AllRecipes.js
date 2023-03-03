@@ -1,4 +1,5 @@
 import React from 'react';
+import Recipe from './Recipe';
 
 const AllRecipes = ({ allRecipes }) => {
   const recipeList = allRecipes.map((recipe, index) => {
