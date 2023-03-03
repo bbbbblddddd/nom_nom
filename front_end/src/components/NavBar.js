@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div className="fixed left-0 flex h-screen items-center justify-center bg-transparent">
+    <div className="fixed left-0 flex min-h-screen items-center bg-transparent">
       <div className="ml-0 flex min-h-full w-14 flex-col items-center space-y-10 py-6">
         <div className="flex items-center justify-center rounded-md bg-[#fffffff3] p-4 text-[#ee6352]">
           <a href="/allrecipes">

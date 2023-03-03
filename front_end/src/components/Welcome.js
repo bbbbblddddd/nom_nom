@@ -4,7 +4,7 @@ import NavBar from './NavBar.js';
 const Welcome = () => {
   return (
     <>
-      <div className="align-center relative flex h-72 min-h-screen flex-col justify-center bg-food_background bg-cover text-center">
+      <div className="align-center min-w-screen relative flex h-72 min-h-screen flex-col justify-center bg-food_background text-center">
         <NavBar />
         <div className="mx-auto w-4/6 rounded-3xl bg-[#fffffff3] px-12 pt-10">
           <div className="flex h-40 justify-center">
