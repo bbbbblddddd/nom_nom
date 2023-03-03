@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar.js';
-
 const Welcome = () => {
   return (
     <>
@@ -8,17 +7,17 @@ const Welcome = () => {
         <NavBar />
         <div className="mx-auto w-4/6 rounded-3xl bg-[#fffffff3] px-12 pt-10">
           <div className="flex h-40 justify-center">
-            <h1 className="animate__bounceInDown font-nomnombold text-[140px] tracking-tighter text-[#ee6352] animate__animated">
+            <h1 className="animate__bounceInDown font-nomnombold text-[140px] tracking-tighter text-[#EE6352] animate__animated">
               nomnom.
             </h1>
           </div>
-          <p className="animate__pulse animate__delay-1s body-font flex justify-center font-nunito text-[32px] font-bold text-[#ee6352] animate__animated">
+          <p className="animate__pulse animate__delay-1s body-font flex justify-center font-nunito text-[32px] font-bold text-[#EE6352] animate__animated">
             Cooking made fun!
           </p>
           <br />
           <div className="flex justify-center pt-5">
-            <p className="mt-0.5 font-nomnombold text-[22px] text-[#ee6352]">nomnom.</p>
-            <p className="body-font font-nunito text-[22px] text-[#ee6352]">
+            <p className="mt-0.5 font-nomnombold text-[22px] text-[#EE6352]">nomnom.</p>
+            <p className="body-font font-nunito text-[22px] text-[#EE6352]">
               is an educational app that turns cooking into a fun group activity between grown-up
               and and child.
             </p>
@@ -26,8 +25,8 @@ const Welcome = () => {
           <br />
           <div className="z-0 mx-auto mb-20 inline-flex h-60 w-full items-center justify-center gap-20">
             <Link
-              to="/login"
-              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#fac05e] p-20 text-center font-nomnom text-2xl text-[#ee6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+              to="/main/login"
+              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nomnom text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
               Login
               <br />
               <div className="mt-auto p-2">
@@ -47,8 +46,8 @@ const Welcome = () => {
               </div>
             </Link>
             <Link
-              to="/allrecipes"
-              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#fac05e] p-20 text-center font-nomnom text-2xl text-[#ee6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+              to="/main/allrecipes"
+              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nomnom text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
               Search
               <br />
               Recipes
@@ -75,5 +74,4 @@ const Welcome = () => {
     </>
   );
 };
-
 export default Welcome;

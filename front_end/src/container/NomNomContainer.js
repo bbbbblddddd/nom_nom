@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Login from '../components/user/Login';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Welcome from '../components/Welcome';
+import { Routes, Route } from 'react-router-dom';
 import AllRecipes from '../components/recipes/AllRecipes';
-import CreateRecipe from '../components/recipes/CreateRecipe';
 import UserProfile from '../components/user/UserProfile';
 import { useState, useEffect } from 'react';
 import Request from '../helpers/Request';
+import NewCustomRecipe from '../components/customRecipes/NewCustomRecipe';
+import RecipeDetail from '../components/recipes/RecipeDetail';
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
@@ -16,33 +16,33 @@ const NomNomContainer = () => {
   const [allCustomRecipes, setAllCustomRecipes] = useState([]);
   const [allFaveRecipes, setAllFaveRecipes] = useState([]);
 
-  // useEffect(() => {
-  //   const request = new Request();
+  useEffect(() => {
+    const request = new Request();
 
-  //   const recipePromise = request.get('/api/recipes');
+    const allRecipePromise = request.get('/api/recipes');
 
-  //   Promise([allRecipePromise]).then((data) => {
-  //     setAllRecipes(data[0]);
-  //   });
-  // }, []);
+    Promise([allRecipePromise]).then((data) => {
+      setAllRecipes(data[0]);
+    });
+  }, []);
 
-  // const findAllRecipesById = (id) => {
-  //   return allRecipes.find((recipe) => {
-  //     return recipe.id === parseInt(id);
-  // })
-  // }
+  const handlePost = (user) => {
+    const request = new Request();
+
+    request.post('/api/users', user).then(() => {
+      window.location = '/profile';
+    });
+  };
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/allrecipes" element={<AllRecipes />} />
-          <Route path="/create" element={<CreateRecipe />} />
-          <Route path="/profile" element={<UserProfile />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/recipes" element={<AllRecipes />} />
+        <Route path="/create" element={<NewCustomRecipe />} />
+        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/recipes/id" element={<RecipeDetail />} />
+      </Routes>
     </>
   );
 };
