@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
-  const url = '/recipes/' + recipe.id;
+  const url = '/main/recipes/' + recipe.id;
   return (
     <p>
-      <Link to={url}>{recipe.name}</Link>
+      <Link to={url} state={recipe}>
+        {recipe.name}
+      </Link>
     </p>
   );
 };

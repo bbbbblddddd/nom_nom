@@ -1,5 +1,9 @@
+import { useLocation } from 'react-router-dom';
+
 const RecipeDetail = () => {
-  return <p>Recipe Detail Page</p>;
+  const recipe = useLocation().state;
+
+  return <p>{recipe.name}</p>;
 };
 
 export default RecipeDetail;
