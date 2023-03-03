@@ -40,8 +40,8 @@ const NomNomContainer = () => {
         <Route path="/login" element={<Login onLogin={handlePost} />} />
         <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
         <Route path="/create" element={<NewCustomRecipe />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
         <Route path="/profile" element={<UserProfile profile={profile} />} />
-        <Route path="/recipes/id" element={<RecipeDetail />} />
       </Routes>
     </>
   );
