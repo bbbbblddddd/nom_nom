@@ -21,8 +21,6 @@ class NomNomApplicationTests {
 	RecipeRepository recipeRepository;
 	@Autowired
 	IngredientRepository ingredientRepository;
-	@Autowired
-	IngredientImperialRepository ingredientImperialRepository;
 
 	@Test
 	public void contextLoads() {

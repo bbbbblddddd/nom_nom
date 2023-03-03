@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const login = { email: stateEmail, password: statePassword };
+    const login = [stateEmail, statePassword];
     onLogin(login);
     setStateEmail('');
     setStatePassword('');

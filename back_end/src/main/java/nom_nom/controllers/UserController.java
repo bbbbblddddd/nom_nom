@@ -8,15 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-    @RestController
+@RestController
     public class UserController {
 
         @Autowired
         UserRepository userRepository;
 
         @GetMapping(value = "/users")
-        public ResponseEntity<List<User>> getAllUsers(){
+        public ResponseEntity<List<User>> getAllUsers(
+                @RequestParam Optional<String> email,
+                @RequestParam Optional<String> password){
+            if (email.isPresent() && password.isPresent()) {
+                return new ResponseEntity<>(userRepository.findByEmailAndPassword(email.get(), password.get()), HttpStatus.OK);
+            }
             return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
         }
 
