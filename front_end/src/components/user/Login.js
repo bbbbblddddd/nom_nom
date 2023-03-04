@@ -35,16 +35,17 @@ const Login = ({ onLogin }) => {
                 type="email"
                 placeholder="Email:"
                 className="placeholder-center body-font mx-auto inline-flex w-full max-w-md rounded-md border-2 border-gray-400 
-         bg-[#cdf18b] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
+              bg-[#d8f999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
                 onChange={handleEmail}
                 value={stateEmail}
               />
               <br />
+              <br />
               <input
                 type="email"
                 placeholder="Password:"
-                className="placeholder-center body-font mx-auto mb-10 inline-flex w-full max-w-md rounded-md border-2 
-         border-gray-400 py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
+                className="placeholder-center body-font mx-auto mb-10 inline-flex w-full max-w-md rounded-md border-2 border-gray-400 
+                bg-[#d8f999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
                 onChange={handlePassword}
                 value={statePassword}
               />

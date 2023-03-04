@@ -7,7 +7,12 @@ module.exports = {
       fontFamily: {
         nomnom: "'Bambino', 'sans-serif'",
         nomnombold: "'BambinoBold', 'sans-serif'",
-        nunito: "'Nunito', 'sans-serif'"
+        nunito: "'Nunito', 'sans-serif'",
+        nexaregular: "'NexaSlabRegular', 'sans-serif'",
+        nexalight: "'NexaSlabLight', 'sans-serif'",
+        nexabook: "'NexaSlabBook', 'sans-serif'",
+        nexabold: "'NexaSlabBold', 'sans-serif'",
+        nexaxbold: "'NexaSlabXBold', 'sans-serif'"
       },
       animatedSettings: {
         animatedSpeed: 1200,

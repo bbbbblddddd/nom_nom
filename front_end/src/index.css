@@ -18,3 +18,30 @@
 
 /* Varied Body Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+/* Varied Body Fonts Alt */
+@font-face {
+  font-family: 'NexaSlabLight';
+  src: url('../src/assets/fonts/NexaSlabLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NexaSlabRegular';
+  src: url('../src/assets/fonts/NexaSlabRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NexaSlabBook';
+  src: url('../src/assets/fonts/NexaSlabBook.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NexaSlabBold';
+  src: url('../src/assets/fonts/NexaSlabBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NexaSlabXBold';
+  src: url('../src/assets/fonts/NexaSlabXBold.otf') format('otf');
+}
+
