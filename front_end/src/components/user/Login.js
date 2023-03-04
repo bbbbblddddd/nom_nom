@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react';
+import NavBar from '../NavBar';
 
 const Login = ({ onLogin }) => {
   const [stateEmail, setStateEmail] = useState('');
@@ -23,6 +24,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="flex h-72 min-h-screen flex-col justify-center bg-food_background2 p-10 text-center">
+      <NavBar />
       <div className="mx-auto flex h-5/6 w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
         <div className="h-40 flex-col justify-center">
           <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">

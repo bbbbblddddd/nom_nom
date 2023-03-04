@@ -22,7 +22,8 @@ module.exports = {
       },
       backgroundImage: {
         food_background: "url('../src/assets/food_background2.png')",
-        food_background2: "url('../src/assets/food_background3.png')"
+        food_background2: "url('../src/assets/food_background3.png')",
+        food_background3: "url('../src/assets/food_background4.png')"
       }
     }
   },
