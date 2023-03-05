@@ -103,9 +103,6 @@ const NavBar = () => {
         </div>
       </div>
     </div>
-    // <>
-    //   <Link to="/create">Create Recipe</Link>
-    // </>
   );
 };
 
