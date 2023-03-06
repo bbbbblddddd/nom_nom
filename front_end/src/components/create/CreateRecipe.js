@@ -8,30 +8,33 @@ import { useState } from 'react';
 
 const CreateRecipe = ({ onRecipeSave }) => {
   const [newRecipe, setNewRecipe] = useState(null);
-  const [ingredients, setIngredients] = useState([]);
-  const [steps, setSteps] = useState([]);
+  const [stateIngredients, setStateIngredients] = useState([]);
+  const [stateSteps, setStateSteps] = useState([]);
 
   const onRecipeCreate = (recipe) => {
     setNewRecipe(recipe);
   };
 
   const onIngredientCreate = (ingredient) => {
-    const copyIngredients = [...ingredients];
+    const copyIngredients = [...stateIngredients];
     copyIngredients.push(ingredient);
-    setIngredients(copyIngredients);
+    setStateIngredients(copyIngredients);
   };
 
   const onStepCreate = (step) => {
-    const copySteps = [...steps];
+    const copySteps = [...stateSteps];
     copySteps.push(step);
-    setSteps(copySteps);
+    setStateSteps(copySteps);
   };
 
   const handleclick = () => {
     const copyRecipe = { ...newRecipe };
-    copyRecipe.ingredients.concat(ingredients);
-    copyRecipe.steps.concat(steps);
-    onRecipeSave(newRecipe);
+    const copyIngredients = [...stateIngredients];
+    const copySteps = [...stateSteps];
+    copyRecipe.ingredients = [...copyIngredients];
+    copyRecipe.steps = [...copySteps];
+    console.log(copyRecipe.steps);
+    onRecipeSave(copyRecipe);
   };
 
   return (
@@ -45,10 +48,10 @@ const CreateRecipe = ({ onRecipeSave }) => {
       )}
       <h2>Add an ingredient</h2>
       <IngredientForm onIngredientCreate={onIngredientCreate} />
-      <IngredientList ingredients={ingredients} />
+      <IngredientList ingredients={stateIngredients} />
       <h2>Add a step</h2>
       <StepForm onStepCreate={onStepCreate} />
-      <StepsList steps={steps} />
+      <StepsList steps={stateSteps} />
       <button onClick={handleclick}>Save</button>
     </>
   );
