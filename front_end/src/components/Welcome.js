@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from 'react-router-dom';
-import NavBar from './NavBar.js';
+import { Link } from "react-router-dom";
+import NavBar from "./NavBar.js";
 const Welcome = () => {
   return (
     <>
@@ -36,16 +36,18 @@ const Welcome = () => {
           <br />
           <div className="flex justify-center">
             <p className="body-font font-nunito text-[22px] text-[#EE5D3D]">
-              Calling all mini chefs! nomnom is the ultimate educational app for kids and grown-ups
-              who love cooking up a storm. With tons of tips and tricks for making healthy meals,
-              it's time to get your apron on and start creating!
+              Calling all mini chefs! nomnom is the ultimate educational app for
+              kids and grown-ups who love cooking up a storm. With tons of tips
+              and tricks for making healthy meals, it's time to get your apron
+              on and start creating!
             </p>
           </div>
           <br />
           <div className="z-0 mx-auto mb-20 inline-flex h-60 w-full items-center justify-center gap-20">
             <Link
               to="/main/login"
-              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nexabold text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nexabold text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200"
+            >
               Login
               <br />
               <div className="mt-auto p-2">
@@ -55,7 +57,8 @@ const Welcome = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="inline-flex h-6 w-6">
+                  className="inline-flex h-6 w-6"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -66,7 +69,8 @@ const Welcome = () => {
             </Link>
             <Link
               to="/main/recipes"
-              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nexabold text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200">
+              className="body-font ... ease inline-flex h-56 w-56 flex-col items-center justify-center rounded-full bg-[#FAC05E] p-20 text-center font-nexabold text-2xl text-[#EE6352] shadow-xl transition delay-100 duration-200 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-yellow-200"
+            >
               Search
               <br />
               Recipes
@@ -78,7 +82,8 @@ const Welcome = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-6 w-6">
+                  className="h-6 w-6"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
