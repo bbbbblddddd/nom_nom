@@ -64,13 +64,12 @@ const SignUp = ({ onSignUp }) => {
             sign up
           </h1>
           <br />
-          <br />
-          <div className="messages">
-            {errorMessage()}
-            {successMessage()}
-          </div>
           <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
-            <form className="mx-auto flex h-60 w-full flex-col items-center justify-center">
+            <div className="messages">
+              {errorMessage()}
+              {successMessage()}
+            </div>
+            <form>
               <label className="label">Name</label>
               <input
                 onChange={handleName}
@@ -113,6 +112,8 @@ const SignUp = ({ onSignUp }) => {
             </form>
             <p className="body-font mb-10 flex-col font-nunito">
               Already have an account?
+              <br />
+              <br />
               <br />
               <a
                 href="/main/login"
