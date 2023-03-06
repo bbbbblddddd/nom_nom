@@ -6,7 +6,6 @@ import AllRecipes from '../components/recipes/AllRecipes';
 import UserProfile from '../components/user/UserProfile';
 import { useState, useEffect } from 'react';
 import Request from '../helpers/Request';
-import NewCustomRecipe from '../components/customRecipes/NewCustomRecipe';
 import RecipeDetail from '../components/recipes/RecipeDetail';
 import CreateRecipe from '../components/create/CreateRecipe';
 import SignUp from '../components/user/SignUp';
@@ -14,8 +13,9 @@ import SignUp from '../components/user/SignUp';
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [profile, setProfile] = useState({});
-  // const [customRecipe, setCustomRecipe] = useState({});
+  const [newRecipe, setNewRecipe] = useState({});
   const [selectedRecipe, setSelectedRecipe] = useState({});
+
 
   useEffect(() => {
     const request = new Request();
