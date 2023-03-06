@@ -5,27 +5,54 @@ const SignUp = ({ onSignUp }) => {
   const [stateName, setStateName] = useState('');
   const [stateEmail, setStateEmail] = useState('');
   const [statePassword, setStatePassword] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
   const handleName = (event) => {
     setStateName(event.target.value);
+    setSubmitted(false);
   };
   const handleEmail = (event) => {
     setStateEmail(event.target.value);
+    setSubmitted(false);
   };
 
   const handlePassword = (event) => {
     setStatePassword(event.target.value);
+    setSubmitted(false);
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const user = {
-      name: stateName,
-      email: stateEmail,
-      password: statePassword
-    };
-    onSignUp(user);
-    setStateName('');
-    setStateEmail('');
-    setStatePassword('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (stateName === '' || stateEmail === '' || statePassword === '') {
+      setError(true);
+    } else {
+      setSubmitted(true);
+      setError(false);
+    }
+  };
+
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? '' : 'none'
+        }}>
+        <h1>User {stateName} successfully registered</h1>
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: error ? '' : 'none'
+        }}>
+        <h1>Please enter all the fields</h1>
+      </div>
+    );
   };
 
   return (
@@ -36,44 +63,54 @@ const SignUp = ({ onSignUp }) => {
           <h1 className="body-font animate__bounceInDown my-16 flex justify-center py-10 font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
             sign up
           </h1>
+          <br />
+          <br />
+          <div className="messages">
+            {errorMessage()}
+            {successMessage()}
+          </div>
           <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
-            <br />
-            <form>
+            <form className="mx-auto flex h-60 w-full flex-col items-center justify-center">
+              <label className="label">Name</label>
               <input
-                type="text"
-                placeholder="Name:"
-                className="placeholder-center body-font mx-auto inline-flex w-full max-w-md rounded-md border-2 border-gray-400
-              bg-[#D8F999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
                 onChange={handleName}
-                value={stateName}
-              />
-              <br />
-              <br />
-              <input
-                type="email"
-                placeholder="Email:"
+                placeholder="Enter your name"
                 className="placeholder-center body-font mx-auto inline-flex w-full max-w-md rounded-md border-2 border-gray-400
               bg-[#D8F999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
-                onChange={handleEmail}
-                value={stateEmail}
+                value={stateName}
+                type="text"
               />
               <br />
-              <br />
+
+              <label className="label">Email</label>
               <input
-                type="password"
-                placeholder="Password:"
+                onChange={handleEmail}
+                placeholder="Enter your email address"
+                className="placeholder-center body-font mx-auto inline-flex w-full max-w-md rounded-md border-2 border-gray-400
+              bg-[#D8F999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
+                value={stateEmail}
+                type="email"
+              />
+              <br />
+
+              <label className="label">Password</label>
+              <input
+                onChange={handlePassword}
+                placeholder="Enter a password"
                 className="placeholder-center body-font mx-auto mb-10 inline-flex w-full max-w-md rounded-md border-2 border-gray-400
                 bg-[#D8F999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
-                onChange={handlePassword}
                 value={statePassword}
+                type="password"
               />
+              <br />
+
               <button
-                type="submit"
-                className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]">
-                Sign Up
+                onClick={handleSubmit}
+                className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]"
+                type="submit">
+                Submit
               </button>
             </form>
-            <br />
             <p className="body-font mb-10 flex-col font-nunito">
               Already have an account?
               <br />
