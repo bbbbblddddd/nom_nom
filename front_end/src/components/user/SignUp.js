@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
-import NavBar from '../NavBar';
+import { useState } from "react";
+import NavBar from "../NavBar";
 const SignUp = ({ onSignUp }) => {
-  const [stateName, setStateName] = useState('');
-  const [stateEmail, setStateEmail] = useState('');
-  const [statePassword, setStatePassword] = useState('');
+  const [stateName, setStateName] = useState("");
+  const [stateEmail, setStateEmail] = useState("");
+  const [statePassword, setStatePassword] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const handleName = (event) => {
@@ -23,11 +23,13 @@ const SignUp = ({ onSignUp }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (stateName === '' || stateEmail === '' || statePassword === '') {
+    if (stateName === "" || stateEmail === "" || statePassword === "") {
       setError(true);
     } else {
       setSubmitted(true);
       setError(false);
+      const login = { email: stateEmail, password: statePassword };
+      onSignUp(login);
     }
   };
 
@@ -36,8 +38,9 @@ const SignUp = ({ onSignUp }) => {
       <div
         className="success"
         style={{
-          display: submitted ? '' : 'none'
-        }}>
+          display: submitted ? "" : "none",
+        }}
+      >
         <h1>User {stateName} successfully registered</h1>
       </div>
     );
@@ -48,8 +51,9 @@ const SignUp = ({ onSignUp }) => {
       <div
         className="error"
         style={{
-          display: error ? '' : 'none'
-        }}>
+          display: error ? "" : "none",
+        }}
+      >
         <h1>Please enter all the fields</h1>
       </div>
     );
@@ -106,7 +110,8 @@ const SignUp = ({ onSignUp }) => {
               <button
                 onClick={handleSubmit}
                 className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]"
-                type="submit">
+                type="submit"
+              >
                 Submit
               </button>
             </form>
@@ -117,14 +122,16 @@ const SignUp = ({ onSignUp }) => {
               <br />
               <a
                 href="/main/login"
-                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline"
+              >
                 Login
               </a>
               <br />
               <br />
               <a
                 href="/"
-                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline"
+              >
                 Back
               </a>
             </p>

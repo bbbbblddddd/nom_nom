@@ -26,6 +26,15 @@ const NomNomContainer = () => {
     });
   }, []);
 
+  const handlePostUser = (user) => {
+    const request = new Request();
+
+    const userPromise = request.post("/api/users", user);
+    userPromise.then((data) => {
+      setProfile(data);
+    });
+  };
+
   const handleGetUser = (user) => {
     const request = new Request();
     const email = user[0];
@@ -44,8 +53,8 @@ const NomNomContainer = () => {
     setNewRecipe(recipe);
     const request = new Request();
 
-    request.post('/api/recipes', recipe).then(() => {
-      window.location = '/main/recipes';
+    request.post("/api/recipes", recipe).then(() => {
+      window.location = "/main/recipes";
     });
   };
 
@@ -53,7 +62,7 @@ const NomNomContainer = () => {
     <>
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp onSignUp={handlePostUser} />} />
         <Route
           path="/recipes/:id"
           element={<RecipeDetail recipe={selectedRecipe} />}

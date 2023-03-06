@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const RecipeForm = ({ onRecipeCreate }) => {
-  const [stateName, setStateName] = useState('');
-  const [stateImg, setStateImg] = useState('');
-  const [statePrepTime, setStatePrepTime] = useState('');
-  const [stateCookTime, setStateCookTime] = useState('');
-  const [stateServings, setStateServings] = useState('');
-  const [stateMealType, setStateMealType] = useState('STARTER');
-  const [stateExtraEquip, setStateExtraEquip] = useState('');
+  const [stateName, setStateName] = useState("");
+  const [stateImg, setStateImg] = useState("");
+  const [statePrepTime, setStatePrepTime] = useState("");
+  const [stateCookTime, setStateCookTime] = useState("");
+  const [stateServings, setStateServings] = useState("");
+  const [stateMealType, setStateMealType] = useState("STARTER");
+  const [stateExtraEquip, setStateExtraEquip] = useState("");
 
   const handleName = (event) => {
     setStateName(event.target.value);
@@ -42,24 +42,34 @@ const RecipeForm = ({ onRecipeCreate }) => {
       prepTime: statePrepTime,
       reviews: [],
       servings: stateServings,
-      steps: []
+      steps: [],
     };
     onRecipeCreate(newRecipe);
-    setStateName('');
-    setStateImg('');
-    setStatePrepTime('');
-    setStateCookTime('');
-    setStateServings('');
-    setStateMealType('starter');
-    setStateExtraEquip('');
+    setStateName("");
+    setStateImg("");
+    setStatePrepTime("");
+    setStateCookTime("");
+    setStateServings("");
+    setStateMealType("starter");
+    setStateExtraEquip("");
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="name" placeholder="Name" onChange={handleName} value={stateName} />
+        <input
+          type="name"
+          placeholder="Name"
+          onChange={handleName}
+          value={stateName}
+        />
         <br />
-        <input type="img" placeholder="Image" onChange={handleImage} value={stateImg} />
+        <input
+          type="img"
+          placeholder="Image"
+          onChange={handleImage}
+          value={stateImg}
+        />
         <br />
         <input
           type="prepTime"
@@ -82,7 +92,12 @@ const RecipeForm = ({ onRecipeCreate }) => {
           value={stateServings}
         />
         <br />
-        <select name="mealType" id="mealType" onChange={handleType} value={stateMealType}>
+        <select
+          name="mealType"
+          id="mealType"
+          onChange={handleType}
+          value={stateMealType}
+        >
           <option value="STARTER">starter</option>
           <option value="MAIN">main</option>
           <option value="DESSERT">dessert</option>
