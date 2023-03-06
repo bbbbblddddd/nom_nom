@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
-import NavBar from '../NavBar';
+import { useState } from "react";
+import NavBar from "../NavBar";
 
 const Login = ({ onLogin }) => {
-  const [stateEmail, setStateEmail] = useState('');
-  const [statePassword, setStatePassword] = useState('');
+  const [stateEmail, setStateEmail] = useState("");
+  const [statePassword, setStatePassword] = useState("");
 
   const handleEmail = (event) => {
     setStateEmail(event.target.value);
@@ -18,8 +18,8 @@ const Login = ({ onLogin }) => {
     event.preventDefault();
     const login = [stateEmail, statePassword];
     onLogin(login);
-    setStateEmail('');
-    setStatePassword('');
+    setStateEmail("");
+    setStatePassword("");
   };
 
   return (
@@ -53,7 +53,8 @@ const Login = ({ onLogin }) => {
               />
               <button
                 type="submit"
-                className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]">
+                className="body-font mx-auto inline-flex max-w-md rounded bg-[#3E8B46] py-2 px-4 font-nunito text-white hover:bg-[#95C938]"
+              >
                 Login
               </button>
             </form>
@@ -63,14 +64,16 @@ const Login = ({ onLogin }) => {
               <br />
               <a
                 href="/main/signup"
-                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline"
+              >
                 Sign up
               </a>
               <br />
               <br />
               <a
                 href="/"
-                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline">
+                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline"
+              >
                 Back
               </a>
             </p>

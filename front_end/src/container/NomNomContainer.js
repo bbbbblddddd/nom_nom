@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import Login from '../components/user/Login';
-import { Routes, Route } from 'react-router-dom';
-import AllRecipes from '../components/recipes/AllRecipes';
-import UserProfile from '../components/user/UserProfile';
-import { useState, useEffect } from 'react';
-import Request from '../helpers/Request';
-import RecipeDetail from '../components/recipes/RecipeDetail';
-import CreateRecipe from '../components/create/CreateRecipe';
-import SignUp from '../components/user/SignUp';
+import Login from "../components/user/Login";
+import { Routes, Route } from "react-router-dom";
+import AllRecipes from "../components/recipes/AllRecipes";
+import UserProfile from "../components/user/UserProfile";
+import { useState, useEffect } from "react";
+import Request from "../helpers/Request";
+import RecipeDetail from "../components/recipes/RecipeDetail";
+import CreateRecipe from "../components/create/CreateRecipe";
+import SignUp from "../components/user/SignUp";
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
@@ -18,7 +18,7 @@ const NomNomContainer = () => {
   useEffect(() => {
     const request = new Request();
 
-    const recipePromise = request.get('/api/recipes');
+    const recipePromise = request.get("/api/recipes");
 
     // Promise([allRecipePromise]).then((data) => {
     recipePromise.then((data) => {
@@ -30,7 +30,7 @@ const NomNomContainer = () => {
     const request = new Request();
     const email = user[0];
     const password = user[1];
-    const userPromise = request.get('/api/users', email, password);
+    const userPromise = request.get("/api/users", email, password);
     userPromise.then((data) => {
       setProfile(data);
     });
@@ -49,7 +49,10 @@ const NomNomContainer = () => {
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/recipes/:id" element={<RecipeDetail recipe={selectedRecipe} />} />
+        <Route
+          path="/recipes/:id"
+          element={<RecipeDetail recipe={selectedRecipe} />}
+        />
 
         <Route
           path="/recipes"
@@ -61,7 +64,10 @@ const NomNomContainer = () => {
             />
           }
         />
-        <Route path="/create" element={<CreateRecipe onRecipeSave={onRecipeSave} />} />
+        <Route
+          path="/create"
+          element={<CreateRecipe onRecipeSave={onRecipeSave} />}
+        />
         <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>
     </>

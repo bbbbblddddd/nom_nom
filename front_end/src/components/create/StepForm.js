@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const StepForm = ({ onStepCreate }) => {
-  const [stateNumber, setStateNumber] = useState('');
-  const [stateDescription, setStateDescription] = useState('');
+  const [stateNumber, setStateNumber] = useState("");
+  const [stateDescription, setStateDescription] = useState("");
 
   const handleNumber = (event) => {
     setStateNumber(event.target.value);
@@ -14,11 +14,11 @@ const StepForm = ({ onStepCreate }) => {
     event.preventDefault();
     const newStep = {
       number: stateNumber,
-      description: stateDescription
+      description: stateDescription,
     };
     onStepCreate(newStep);
-    setStateNumber('');
-    setStateDescription('');
+    setStateNumber("");
+    setStateDescription("");
   };
 
   return (
