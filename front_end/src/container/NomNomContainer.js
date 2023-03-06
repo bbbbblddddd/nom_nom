@@ -8,13 +8,12 @@ import { useState, useEffect } from 'react';
 import Request from '../helpers/Request';
 import NewCustomRecipe from '../components/customRecipes/NewCustomRecipe';
 import RecipeDetail from '../components/recipes/RecipeDetail';
+import CreateRecipe from '../components/create/CreateRecipe';
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [profile, setProfile] = useState({});
   const [customRecipe, setCustomRecipe] = useState({});
-  const [allCustomRecipes, setAllCustomRecipes] = useState([]);
-  const [allFaveRecipes, setAllFaveRecipes] = useState([]);
 
   useEffect(() => {
     const request = new Request();
@@ -42,7 +41,7 @@ const NomNomContainer = () => {
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
         <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
-        <Route path="/create" element={<NewCustomRecipe />} />
+        <Route path="/create" element={<CreateRecipe />} />
         <Route path="/recipes/:id" element={<RecipeDetail />} />
         <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>

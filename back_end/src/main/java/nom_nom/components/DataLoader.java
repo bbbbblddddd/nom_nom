@@ -29,7 +29,7 @@ public class DataLoader implements ApplicationRunner {
 
         User admin = new User("admin@admin", "admin@admin");
         userRepository.save(admin);
-        
+
         Recipe fruitSkewers = new Recipe("Fruit skewers with yogurt dip", "https://nomnomcc.s3.amazonaws.com/fruitskewerswithyoghurtdip.jpg", 20, 0, 4, MealType.DESSERT,"plastic or metal straw, mixing bowl, measuring cups and spoons, wooden skewers");
         fruitSkewers.addUser(admin);
         recipeRepository.save(fruitSkewers);
