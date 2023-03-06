@@ -6,8 +6,7 @@ const RecipeDetail = ({ recipe }) => {
   const steps = recipe.steps.map((step) => {
     return (
       <li key={step.id}>
-        {' '}
-        {step.stepNum} {step.description}{' '}
+        {step.stepNum} {step.description}
       </li>
     );
   });

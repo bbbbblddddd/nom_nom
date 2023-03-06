@@ -6,7 +6,7 @@ const AllRecipes = ({ allRecipes, onRecipeSelected }) => {
     return (
       <li key={index}>
         <div className="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-100 dark:bg-white">
-          <img className="rounded-t-lg" src={recipe.image} alt={recipe.name} />
+          <img className="rounded-t-lg" src={recipe.image_url} alt={recipe.name} />
           <div className="p-5">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {recipe.name}
