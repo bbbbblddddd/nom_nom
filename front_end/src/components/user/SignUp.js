@@ -36,7 +36,6 @@ const SignUp = ({ onSignUp }) => {
           <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
             sign up
           </h1>
-
           <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
             <br />
             <form>
@@ -78,7 +77,12 @@ const SignUp = ({ onSignUp }) => {
             <p className="body-font mb-10 flex-col font-nunito">
               Already have an account?
               <br />
-              <a href="/login" className="body-font inline-flex font-nunito"></a>
+              <a href="/login" className="body-font inline-flex font-nunito">
+                Login
+              </a>
+              <a href="/" className="body-font inline-flex font-nunito">
+                Back
+              </a>
             </p>
           </div>
         </div>
