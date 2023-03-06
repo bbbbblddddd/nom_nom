@@ -16,7 +16,6 @@ const NomNomContainer = () => {
   const [newRecipe, setNewRecipe] = useState({});
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
-
   useEffect(() => {
     const request = new Request();
 
@@ -42,6 +41,10 @@ const NomNomContainer = () => {
     setSelectedRecipe(recipe);
   };
 
+  const onRecipeSave = (recipe) => {
+    setNewRecipe(recipe);
+  };
+
   return (
     <>
       <Routes>
@@ -59,7 +62,7 @@ const NomNomContainer = () => {
             />
           }
         />
-        <Route path="/create" element={<CreateRecipe />} />
+        <Route path="/create" element={<CreateRecipe onRecipeSave={onRecipeSave} />} />
         <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>
     </>
