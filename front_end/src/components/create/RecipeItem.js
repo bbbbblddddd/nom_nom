@@ -2,7 +2,7 @@ const RecipeItem = ({ newRecipe }) => {
   return (
     <>
       <h3>Name: {newRecipe.name}</h3>
-      <img src={newRecipe.imageUrl} alt={newRecipe.name} width="200rem" />
+      <img src={newRecipe.image_url} alt={newRecipe.name} width="200rem" />
       <p>Prep Time: {newRecipe.prepTime}</p>
       <p>Cook Time: {newRecipe.cookTime}</p>
       <p>Servings: {newRecipe.servings}</p>

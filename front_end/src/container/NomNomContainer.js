@@ -43,6 +43,11 @@ const NomNomContainer = () => {
 
   const onRecipeSave = (recipe) => {
     setNewRecipe(recipe);
+    const request = new Request();
+
+    request.post('/api/recipes', recipe).then(() => {
+      window.location = '/main/recipes';
+    });
   };
 
   return (

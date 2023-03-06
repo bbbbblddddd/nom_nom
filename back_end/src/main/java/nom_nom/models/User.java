@@ -19,11 +19,11 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Review> reviews;
 
-    @JsonIgnoreProperties({"users"})
+    @JsonBackReference
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
@@ -33,7 +33,7 @@ public class User {
     )
     private List<Recipe> recipes;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<CustomRecipe> customRecipes;
     public User() {

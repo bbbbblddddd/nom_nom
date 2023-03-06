@@ -33,14 +33,15 @@ const RecipeForm = ({ onRecipeCreate }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newRecipe = {
-      name: stateName,
-      imageUrl: stateImg,
-      prepTime: statePrepTime,
       cookTime: statePrepTime,
-      servings: stateServings,
-      mealType: stateMealType,
       extraEquip: stateExtraEquip,
+      image_url: stateImg,
       ingredients: [],
+      mealType: stateMealType,
+      name: stateName,
+      prepTime: statePrepTime,
+      reviews: [],
+      servings: stateServings,
       steps: []
     };
     onRecipeCreate(newRecipe);
