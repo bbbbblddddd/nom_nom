@@ -31,9 +31,9 @@ const SignUp = ({ onSignUp }) => {
   return (
     <div className="flex h-72 min-h-screen flex-col justify-center bg-food_background2 p-10 text-center">
       <NavBar />
-      <div className="mx-auto flex h-5/6 w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
+      <div className="mx-auto flex h-full w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
         <div className="h-40 flex-col justify-center">
-          <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
+          <h1 className="body-font animate__bounceInDown my-16 flex justify-center py-10 font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
             sign up
           </h1>
           <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
@@ -77,10 +77,16 @@ const SignUp = ({ onSignUp }) => {
             <p className="body-font mb-10 flex-col font-nunito">
               Already have an account?
               <br />
-              <a href="/login" className="body-font inline-flex font-nunito">
+              <a
+                href="/main/login"
+                className="body-font inline-flex font-nunito font-bold text-[#3E8B46] hover:text-[#95C938] hover:underline">
                 Login
               </a>
-              <a href="/" className="body-font inline-flex font-nunito">
+              <br />
+              <br />
+              <a
+                href="/"
+                className="body-font inline-flex font-nunito text-[#3E8B46] hover:text-[#95C938] hover:underline">
                 Back
               </a>
             </p>
