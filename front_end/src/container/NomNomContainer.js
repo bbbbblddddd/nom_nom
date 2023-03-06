@@ -9,6 +9,7 @@ import Request from '../helpers/Request';
 import NewCustomRecipe from '../components/customRecipes/NewCustomRecipe';
 import RecipeDetail from '../components/recipes/RecipeDetail';
 import CreateRecipe from '../components/create/CreateRecipe';
+import SignUp from '../components/user/SignUp';
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
@@ -45,6 +46,7 @@ const NomNomContainer = () => {
     <>
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/recipes/:id" element={<RecipeDetail recipe={selectedRecipe} />} />
 
         <Route
