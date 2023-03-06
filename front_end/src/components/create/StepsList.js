@@ -1,4 +1,4 @@
-import StepItem from './StepItem';
+import StepItem from "./StepItem";
 
 const StepsList = ({ steps }) => {
   const stepNodes = steps.map((step, index) => {
