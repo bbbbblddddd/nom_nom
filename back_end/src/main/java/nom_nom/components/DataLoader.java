@@ -86,10 +86,36 @@ public class DataLoader implements ApplicationRunner {
         blueberry.setRecipe(fruitSkewers);
         ingredientRepository.save(blueberry);
 
-
         Step one = new Step( 1, "Lay a chopping board on tea towel to stop it from slipping");
         one.setRecipe(fruitSkewers);
         stepRepository.save(one);
+
+        Step two = new Step( 2, "Peel the banana, then holding the knife in claw position, chop the banana");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(two);
+
+        Step three = new Step( 3, "Remove stocks from strawberries by pushing a straw through the strawberry");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(three);
+
+        Step four = new Step( 4, "With your hands in a bridge position, hold each strawberry between your thumb and fingers then carefully cut it in half from to pointy end to the stalk end");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(four);
+
+        Step five = new Step( 5, "Carefully push the banana slices, strawberry halves, grapes and blueberries onto the skewers");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(five);
+
+        Step six = new Step( 6, "Mix the yogurt and honey and cinnamon together and serve");
+        one.setRecipe(fruitSkewers);
+        stepRepository.save(six);
+        recipeRepository.save(fruitSkewers);
+
+
+
+
+
+
 //
 //        Tip newTip = new Tip("", "", "", one);
 //        tipRepository.save(newTip);
