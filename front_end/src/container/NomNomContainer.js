@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Login from '../components/user/Login';
-import { Routes, Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import AllRecipes from '../components/recipes/AllRecipes';
 import UserProfile from '../components/user/UserProfile';
 import { useState, useEffect } from 'react';
@@ -15,7 +14,6 @@ const NomNomContainer = () => {
   const [profile, setProfile] = useState({});
   const [newRecipe, setNewRecipe] = useState({});
   const [selectedRecipe, setSelectedRecipe] = useState({});
-
 
   useEffect(() => {
     const request = new Request();
