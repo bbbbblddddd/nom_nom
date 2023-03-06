@@ -3,10 +3,10 @@ import { useState } from 'react';
 const RecipeForm = ({ onRecipeCreate }) => {
   const [stateName, setStateName] = useState('');
   const [stateImg, setStateImg] = useState('');
-  const [statePrepTime, setStatePrepTime] = useState(0);
-  const [stateCookTime, setStateCookTime] = useState(0);
+  const [statePrepTime, setStatePrepTime] = useState('');
+  const [stateCookTime, setStateCookTime] = useState('');
   const [stateServings, setStateServings] = useState('');
-  const [stateMealType, setStateMealType] = useState('starter');
+  const [stateMealType, setStateMealType] = useState('STARTER');
   const [stateExtraEquip, setStateExtraEquip] = useState('');
 
   const handleName = (event) => {
@@ -39,7 +39,9 @@ const RecipeForm = ({ onRecipeCreate }) => {
       cookTime: statePrepTime,
       servings: stateServings,
       mealType: stateMealType,
-      extraEquip: stateExtraEquip
+      extraEquip: stateExtraEquip,
+      ingredients: [],
+      steps: []
     };
     onRecipeCreate(newRecipe);
     setStateName('');
@@ -54,36 +56,36 @@ const RecipeForm = ({ onRecipeCreate }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="name" placeholder="Name:" onChange={handleName} value={stateName} />
+        <input type="name" placeholder="Name" onChange={handleName} value={stateName} />
         <br />
-        <input type="img" placeholder="Image:" onChange={handleImage} value={stateImg} />
+        <input type="img" placeholder="Image" onChange={handleImage} value={stateImg} />
         <br />
         <input
           type="prepTime"
-          placeholder="Preparation Time (mins):"
+          placeholder="Preparation Time (mins)"
           onChange={handlePrepTime}
           value={statePrepTime}
         />
         <br />
         <input
           type="cookTime"
-          placeholder="Cooking Time (mins):"
+          placeholder="Cooking Time (mins)"
           onChange={handleCookTime}
           value={stateCookTime}
         />
         <br />
         <input
           type="servings"
-          placeholder="Servings:"
+          placeholder="Servings"
           onChange={handleServings}
           value={stateServings}
         />
         <br />
         <select name="mealType" id="mealType" onChange={handleType} value={stateMealType}>
-          <option value="starter">starter</option>
-          <option value="main">main</option>
-          <option value="dessert">dessert</option>
-          <option value="snack">snack</option>
+          <option value="STARTER">starter</option>
+          <option value="MAIN">main</option>
+          <option value="DESSERT">dessert</option>
+          <option value="SNACK">snack</option>
         </select>
         <br />
         <input

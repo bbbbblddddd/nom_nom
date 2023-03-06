@@ -17,12 +17,14 @@ public class Ingredient {
     private String image_url;
 
     @Column(name = "food_type")
+    @Enumerated(value = EnumType.STRING)
     private FoodType foodType;
 
     @Column(name = "quantity")
     private double quantity;
 
     @Column(name = "unit")
+    @Enumerated(value = EnumType.STRING)
     private Unit unit;
 
     @JsonIgnoreProperties({"ingredients"})
