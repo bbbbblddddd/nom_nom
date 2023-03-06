@@ -1,8 +1,15 @@
 const RecipeDetail = ({ recipe }) => {
-  console.log('recipe', recipe);
   const ingredients = recipe.ingredients.map((ingredient) => {
-    console.log('ingredient', ingredient.name);
     return <li key={ingredient.id}>{ingredient.name}</li>;
+  });
+
+  const steps = recipe.steps.map((step) => {
+    return (
+      <li key={step.id}>
+        {' '}
+        {step.stepNum} {step.description}{' '}
+      </li>
+    );
   });
   return (
     <div>
@@ -23,7 +30,8 @@ const RecipeDetail = ({ recipe }) => {
         <p>Extra Equipment:</p>
         <li>{recipe.extraEquip}</li>
         <p>Ingredients</p>
-        {ingredients}
+        <li>{ingredients}</li>
+        <li>{steps}</li>
       </ul>
     </div>
   );
