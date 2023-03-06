@@ -1,18 +1,21 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Login from '../components/user/Login';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Switch } from 'react-router-dom';
 import AllRecipes from '../components/recipes/AllRecipes';
 import UserProfile from '../components/user/UserProfile';
 import { useState, useEffect } from 'react';
 import Request from '../helpers/Request';
 import RecipeDetail from '../components/recipes/RecipeDetail';
 import CreateRecipe from '../components/create/CreateRecipe';
+import SignUp from '../components/user/SignUp';
 
 const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [profile, setProfile] = useState({});
   const [newRecipe, setNewRecipe] = useState({});
+  const [selectedRecipe, setSelectedRecipe] = useState({});
+
 
   useEffect(() => {
     const request = new Request();
@@ -35,13 +38,28 @@ const NomNomContainer = () => {
     });
   };
 
+  const onRecipeSelected = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
   return (
     <>
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
-        <Route path="/recipes" element={<AllRecipes allRecipes={allRecipes} />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/recipes/:id" element={<RecipeDetail recipe={selectedRecipe} />} />
+
+        <Route
+          path="/recipes"
+          element={
+            <AllRecipes
+              allRecipes={allRecipes}
+              selectedRecipe={selectedRecipe}
+              onRecipeSelected={onRecipeSelected}
+            />
+          }
+        />
         <Route path="/create" element={<CreateRecipe />} />
-        <Route path="/recipes/:id" element={<RecipeDetail />} />
         <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>
     </>
