@@ -33,7 +33,6 @@ const AllRecipes = ({ allRecipes, onRecipeSelected }) => {
             className="body-font inline-flex font-nunito text-[#EE5D3D] hover:text-[#ed7156] hover:underline">
             Back
           </a>
-          {/* {selectedRecipe && <RecipeDetail recipe={selectedRecipe} />} */}
         </div>
       </div>
     </div>
