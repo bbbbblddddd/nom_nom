@@ -27,17 +27,15 @@ const SignUp = ({ onSignUp }) => {
     setStateEmail('');
     setStatePassword('');
   };
-  
-  
+
   return (
     <div className="flex h-72 min-h-screen flex-col justify-center bg-food_background2 p-10 text-center">
       <NavBar />
       <div className="mx-auto flex h-5/6 w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
         <div className="h-40 flex-col justify-center">
           <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
-            Sign Up
+            sign up
           </h1>
-
           <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
             <br />
             <form>
@@ -79,16 +77,18 @@ const SignUp = ({ onSignUp }) => {
             <p className="body-font mb-10 flex-col font-nunito">
               Already have an account?
               <br />
-              <a 
-              href="/login"
-              className="body-font inline-flex font-nunito"></a>
-              </p>
-              </div>
-              </div>
-              </div>
-              </div>
-  )
-}
-    
+              <a href="/login" className="body-font inline-flex font-nunito">
+                Login
+              </a>
+              <a href="/" className="body-font inline-flex font-nunito">
+                Back
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default SignUp
+export default SignUp;
