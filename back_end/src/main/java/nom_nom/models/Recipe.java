@@ -30,7 +30,7 @@ public class Recipe {
     @Column(name = "extra_equip")
     private String extraEquip;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipes"})
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
@@ -41,11 +41,11 @@ public class Recipe {
     private List<User> users;
 
     @JsonIgnoreProperties({"recipe"})
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private List<Ingredient> ingredients;
 
     @JsonIgnoreProperties({"recipe"})
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private List<Step> steps;
 
     @JsonIgnoreProperties({"recipe"})
@@ -155,6 +155,7 @@ public class Recipe {
 
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+        this.ingredients.forEach(ingredient -> ingredient.setRecipe(this));
     }
 
     public List<Step> getSteps() {
@@ -163,6 +164,7 @@ public class Recipe {
 
     public void setSteps(List<Step> steps) {
         this.steps = steps;
+        this.steps.forEach(step -> step.setRecipe(this));
     }
 
     public void addStep(Step step){

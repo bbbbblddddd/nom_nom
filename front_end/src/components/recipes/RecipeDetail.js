@@ -1,34 +1,34 @@
 const RecipeDetail = ({ recipe }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {
-    return <li key={ingredient.id}>{ingredient.name}</li>;
+    return (
+      <li key={ingredient.id}>
+        {ingredient.name} {ingredient.quantity} {ingredient.unit}
+      </li>
+    );
   });
 
   const steps = recipe.steps.map((step) => {
     return (
       <li key={step.id}>
-        {step.stepNum} {step.description}
+        {step.stepNum}. {step.description}
       </li>
     );
   });
   return (
     <div>
-      <ul>
-        <li>{recipe.name}</li>
-        <li>{recipe.image_url}</li>
-        <p>Prep Time:</p>
-        <li>{recipe.prepTime} minutes</li>
-        <p>Cook Time:</p>
-        <li>{recipe.cookTime} minutes</li>
-        <p>Servings:</p>
-        <li>{recipe.servings}</li>
-        <p>Meal Type:</p>
-        <li>{recipe.mealType}</li>
-        <p>Extra Equipment:</p>
-        <li>{recipe.extraEquip}</li>
-        <p>Ingredients</p>
-        <li>{ingredients}</li>
-        <li>{steps}</li>
-      </ul>
+      <h1>{recipe.name}</h1>
+      <h3>{recipe.mealType}</h3>
+      <img src={recipe.image_url} />
+      <p>Prep Time: {recipe.prepTime} minutes</p>
+      <p>Cook Time: {recipe.cookTime} minutes</p>
+      <p>Servings: {recipe.servings}</p>
+      <p>Extra Equipment: {recipe.extraEquip}</p>
+      <br />
+      <h3>Ingredients:</h3>
+      <ul>{ingredients}</ul>
+      <br />
+      <h3>Steps:</h3>
+      <ul>{steps}</ul>
     </div>
   );
 };
