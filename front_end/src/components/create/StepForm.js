@@ -24,21 +24,35 @@ const StepForm = ({ onStepCreate }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <label className="font-nunito text-xl">Which step is it?</label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="number"
-          placeholder="Step number"
+          placeholder="e.g. Step #1"
           onChange={handleNumber}
           value={stateNumber}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          What do you need to do for this step?
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="description"
-          placeholder="Description"
+          placeholder="e.g. Chop potatoes"
           onChange={handleDescription}
           value={stateDescription}
         />
         <br />
-        <button type="submit">Submit</button>
+        <button
+          className="m-6 rounded-full bg-[#3E8B46] p-4 font-nunito text-xl text-white"
+          type="submit"
+        >
+          Submit
+        </button>
       </form>
     </>
   );
