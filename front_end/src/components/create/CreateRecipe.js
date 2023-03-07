@@ -7,6 +7,7 @@ import StepsList from "./StepsList";
 import RecipeForm from "./RecipeForm";
 import NavBar from "../NavBar";
 import { useState } from "react";
+import BackButton from "../uiComponents/BackButton";
 
 const CreateRecipe = ({ onRecipeSave }) => {
   const [newRecipe, setNewRecipe] = useState(null);
@@ -71,6 +72,8 @@ const CreateRecipe = ({ onRecipeSave }) => {
           >
             Save Recipe
           </button>
+          <br />
+          <BackButton />
         </div>
       </div>
     </div>

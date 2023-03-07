@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import NavBar from "../NavBar";
 import BackButton from "../uiComponents/BackButton";
 import RemoveButton from "../uiComponents/RemoveButton";

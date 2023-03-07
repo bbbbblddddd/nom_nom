@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import NavBar from "../NavBar";
-import BackButton from "../uiComponents/BackButton";
 import ViewButton from "../uiComponents/ViewButton";
+import CreateButton from "../uiComponents/CreateButton";
 
 const AllRecipes = ({ allRecipes, onRecipeSelected }) => {
   const recipeList = allRecipes.map((recipe, index) => {
@@ -31,9 +32,24 @@ const AllRecipes = ({ allRecipes, onRecipeSelected }) => {
           <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#EE5D3D] animate__animated">
             recipes
           </h1>
-          <ul className="grid grid-cols-2 gap-4">{recipeList}</ul>
+          <p className="body-font font-nunito text-[22px] text-[#EE5D3D]">
+            Are you ready to stir up some kitchen magic? Get your favorite
+            grown-up and let's put on our aprons! With these delicious recipes
+            to choose from, we're going to cook up a storm and make our taste
+            buds sing! So come on, let's get started and have some tasty fun!
+          </p>
           <br />
-          <BackButton />
+          <p className="body-font font-nunito text-[22px] text-[#EE5D3D]">
+            Feeling even more creative?
+          </p>
+          <div className="flex justify-center">
+            <p className="body-font pr-2 font-nunito text-[22px] text-[#EE5D3D]">
+              Why not
+            </p>
+            <CreateButton />
+          </div>
+          <br />
+          <ul className="grid grid-cols-2 gap-4">{recipeList}</ul>
         </div>
       </div>
     </div>
