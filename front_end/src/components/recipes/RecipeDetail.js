@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import NavBar from "../NavBar";
 import BackButton from "../uiComponents/BackButton";
+import FavouriteButton from "../uiComponents/FavouriteButton";
 
 const RecipeDetail = ({ recipe }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {
@@ -74,7 +75,7 @@ const RecipeDetail = ({ recipe }) => {
             <ul className="font-nunito">{ingredients}</ul>
           </div>
         </div>
-        <div className="lex w-full justify-between text-start">
+        <div className="flex w-full justify-between text-start">
           <h3 className="px-2 font-nexabold text-lg text-[#EE5D3D]">Steps:</h3>
           <ol className="px-2 font-nunito">{steps}</ol>
           <img
@@ -83,6 +84,9 @@ const RecipeDetail = ({ recipe }) => {
             className="h-64 w-64 justify-center rounded-lg"
           />
         </div>
+        <br />
+        <FavouriteButton />
+        <br />
         <BackButton />
       </div>
     </div>
