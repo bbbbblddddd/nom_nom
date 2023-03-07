@@ -25,12 +25,17 @@ const Login = ({ onLogin }) => {
   return (
     <div className="flex h-72 min-h-screen flex-col justify-center bg-food_background2 p-10 text-center">
       <NavBar />
-      <div className="mx-auto flex h-5/6 w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
+      <div className="mx-auto flex h-full w-4/6 justify-center rounded-3xl bg-[#fffffff3] px-12">
         <div className="h-40 flex-col justify-center">
-          <h1 className="body-font animate__bounceInDown my-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
+          <h1 className="body-font animate__bounceInDown mt-16 flex justify-center font-nomnombold text-9xl tracking-tight text-[#3E8B46] animate__animated">
             login
           </h1>
-          <div className="mx-auto flex h-60 w-full flex-col items-center justify-center">
+          <p className="mt-8 font-nunito">
+            Please login to access our extended features like saving recipes to
+            your profile.
+          </p>
+          <br />
+          <div className="mx-auto mt-10 flex h-60 w-full flex-col items-center justify-center">
             <br />
             <form onSubmit={handleSubmit}>
               <input
@@ -59,7 +64,7 @@ const Login = ({ onLogin }) => {
               </button>
             </form>
             <br />
-            <p className="body-font mb-10 flex-col font-nunito">
+            <p className="body-font flex-col font-nunito">
               Don't have an account?
               <br />
               <a
