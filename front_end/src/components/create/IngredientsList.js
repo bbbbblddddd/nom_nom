@@ -1,4 +1,4 @@
-import IngredientItem from './IngredientItem';
+import IngredientItem from "./IngredientItem";
 
 const IngredientList = ({ ingredients }) => {
   const ingredientNodes = ingredients.map((ingredient, index) => {
