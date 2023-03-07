@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
@@ -25,6 +26,7 @@ module.exports = {
         food_background2: "url('../src/assets/food_background3.png')",
         food_background3: "url('../src/assets/food_background4.png')",
         food_background4: "url('../src/assets/food_background5.png')",
+        food_background5: "url('../src/assets/food_background6.png')",
       },
     },
   },
