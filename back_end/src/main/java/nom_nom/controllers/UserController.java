@@ -44,6 +44,19 @@ import java.util.Optional;
             Optional<User> userToDelete = userRepository.findById(id);
             userRepository.delete(userToDelete.get());
             return new ResponseEntity<>(userToDelete.get(), HttpStatus.OK);
-    }
+        }
+
+        @PutMapping(value = "/users/{id}")
+        public ResponseEntity<User> updateUser(@RequestBody User updatedUser, @PathVariable Long id) {
+            User existingUser = userRepository.findById(id).get();
+
+            existingUser.setEmail(updatedUser.getEmail());
+            existingUser.setPassword(updatedUser.getPassword());
+            existingUser.setRecipes(updatedUser.getRecipes());
+
+            userRepository.save(existingUser);
+
+            return new ResponseEntity<>(existingUser, HttpStatus.OK);
+        }
     }
 

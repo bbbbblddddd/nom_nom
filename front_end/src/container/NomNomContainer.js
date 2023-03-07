@@ -83,7 +83,17 @@ const NomNomContainer = () => {
     copyProfile.recipes = copyProfile.recipes.filter(
       (recipe) => recipe !== recipeToRemove
     );
-    setProfile(copyProfile);
+    const request = new Request();
+
+    const updatedUserPromise = request.put(
+      `/api/users/${copyProfile.id}`,
+      copyProfile
+    );
+    updatedUserPromise
+      .then((data) => data.json())
+      .then((data) => {
+        setProfile(data);
+      });
   };
   // const request = new Request();
 
