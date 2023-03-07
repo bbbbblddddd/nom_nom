@@ -21,8 +21,8 @@ import java.util.Optional;
             return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
         }
 
-    @GetMapping(value = "/user")
-    public ResponseEntity<Optional<User>> getUser(
+        @GetMapping(value = "/user")
+        public ResponseEntity<Optional<User>> getUser(
             @RequestParam String email,
             @RequestParam String password){
             return new ResponseEntity<>(userRepository.findByEmailAndPassword(email, password), HttpStatus.OK);
@@ -38,5 +38,12 @@ import java.util.Optional;
             userRepository.save(user);
             return new ResponseEntity<>(user, HttpStatus.CREATED);
         }
+
+        @DeleteMapping(value = "/users/{id}")
+        public ResponseEntity<User> deleteUser(@PathVariable Long id) {
+            Optional<User> userToDelete = userRepository.findById(id);
+            userRepository.delete(userToDelete.get());
+            return new ResponseEntity<>(userToDelete.get(), HttpStatus.OK);
+    }
     }
 
