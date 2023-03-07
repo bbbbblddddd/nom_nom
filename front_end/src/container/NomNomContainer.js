@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Login from "../components/user/Login";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, useNavigate } from "react-router-dom";
 import AllRecipes from "../components/recipes/AllRecipes";
 import UserProfile from "../components/user/UserProfile";
 import { useState, useEffect } from "react";
@@ -14,6 +14,7 @@ const NomNomContainer = () => {
   const [profile, setProfile] = useState({});
   const [newRecipe, setNewRecipe] = useState({});
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const request = new Request();
@@ -25,6 +26,12 @@ const NomNomContainer = () => {
       setAllRecipes(data);
     });
   }, []);
+
+  useEffect(() => {
+    if (Object.keys(profile).length !== 0) {
+      navigate("/main/profile");
+    }
+  }, [profile]);
 
   const handlePostUser = (user) => {
     const request = new Request();
@@ -70,6 +77,7 @@ const NomNomContainer = () => {
       window.location = "/signup";
     });
   };
+
   const onRecipeRemoved = (recipeToRemove) => {
     const copyProfile = { ...profile };
     copyProfile.recipes = copyProfile.recipes.filter(

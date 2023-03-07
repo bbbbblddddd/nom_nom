@@ -57,61 +57,105 @@ const RecipeForm = ({ onRecipeCreate }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <label className="font-nunito text-xl">Enter a fun recipe name:</label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="name"
           placeholder="Name"
           onChange={handleName}
           value={stateName}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          Select an image for your recipe:
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="img"
-          placeholder="Image"
+          placeholder="Choose an image"
           onChange={handleImage}
           value={stateImg}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          How long will it take to prepare?
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="prepTime"
-          placeholder="Preparation Time (mins)"
+          placeholder="e.g. 5 minutes"
           onChange={handlePrepTime}
           value={statePrepTime}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          How long will it take to cook?
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="cookTime"
-          placeholder="Cooking Time (mins)"
+          placeholder="e.g. 10 minutes"
           onChange={handleCookTime}
           value={stateCookTime}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          How many servings will it have?
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="servings"
           placeholder="Servings"
           onChange={handleServings}
           value={stateServings}
         />
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          What sort of meal will it be?
+        </label>
+        <br />
         <select
+          className="w-60 rounded-3xl bg-[#94c93895] p-2 font-nunito text-gray-400"
           name="mealType"
           id="mealType"
           onChange={handleType}
           value={stateMealType}
         >
-          <option value="STARTER">starter</option>
-          <option value="MAIN">main</option>
-          <option value="DESSERT">dessert</option>
-          <option value="SNACK">snack</option>
+          <option value="STARTER">Starter</option>
+          <option value="MAIN">Main</option>
+          <option value="DESSERT">Dessert</option>
+          <option value="SNACK">Snack</option>
         </select>
         <br />
+        <br />
+        <label className="font-nunito text-xl">
+          Will you need any extra equipment?
+        </label>
+        <br />
         <input
+          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="extraEquip"
-          placeholder="Extra Equipment:"
+          placeholder="e.g. food processor"
           onChange={handleEquip}
           value={stateExtraEquip}
         />
         <br />
-        <button type="submit">Submit</button>
+        <button
+          className="m-6 rounded-full bg-[#3E8B46] p-4 font-nunito text-xl text-white"
+          type="submit"
+        >
+          Submit
+        </button>
       </form>
     </>
   );
