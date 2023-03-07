@@ -1,7 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import DeleteAccount from "../uiComponents/DeleteAccount";
 import FaveRecipeList from "../recipes/FaveRecipeList";
 import NavBar from "../NavBar";
 import LoginButton from "../uiComponents/LoginButton";
+import SignUpButton from "../uiComponents/SignUpButton";
 
 const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
   return (
@@ -29,6 +31,13 @@ const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
               <LoginButton />
             </>
           )}
+          <br />
+          <br />
+          <p className="body-font flex-col font-nunito">
+            Don't have an account?
+            <br />
+            <SignUpButton />
+          </p>
           <br />
           <br />
           <DeleteAccount
