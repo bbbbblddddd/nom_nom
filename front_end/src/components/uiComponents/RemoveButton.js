@@ -4,7 +4,10 @@ const RemoveButton = ({ recipe, onRecipeRemoved }) => {
   };
 
   return (
-    <button className="btn btn-secondary bg-red-500" onClick={handleRemove}>
+    <button
+      className="btn btn-secondary rounded-full bg-red-500 p-2"
+      onClick={handleRemove}
+    >
       Remove
     </button>
   );
