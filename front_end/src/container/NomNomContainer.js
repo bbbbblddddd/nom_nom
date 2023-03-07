@@ -59,7 +59,6 @@ const NomNomContainer = () => {
     });
   };
 
-
   const onDeleteAccount = (profileToDelete) => {
     const id = profileToDelete.id;
     const request = new Request();
@@ -68,6 +67,7 @@ const NomNomContainer = () => {
     request.delete(url).then(() => {
       window.location = "/signup";
     });
+  };
 
   const onRecipeRemoved = (recipeToRemove) => {
     const copyProfile = { ...profile };
@@ -133,7 +133,11 @@ const NomNomContainer = () => {
         <Route
           path="/profile"
           element={
-            <UserProfile profile={profile} onRecipeRemoved={onRecipeRemoved} onDeleteAccount={onDeleteAccount}/>
+            <UserProfile
+              profile={profile}
+              onRecipeRemoved={onRecipeRemoved}
+              onDeleteAccount={onDeleteAccount}
+            />
           }
         />
       </Routes>
