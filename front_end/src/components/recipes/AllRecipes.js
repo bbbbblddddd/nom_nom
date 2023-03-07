@@ -16,7 +16,7 @@ const AllRecipes = ({ allRecipes, onRecipeSelected }) => {
             <h4 className="mb-2 font-nexabold text-2xl tracking-tight text-gray-700 dark:text-gray-700">
               {recipe.name}
             </h4>
-            <ViewButton recipe={recipe} onRecipeSelected={onRecipeSelected} />
+            <ViewButton recipe={recipe} onRecipeSelected={onRecipeSelected}/>
           </div>
         </div>
       </li>
