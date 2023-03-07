@@ -17,14 +17,16 @@ import java.util.Optional;
         UserRepository userRepository;
 
         @GetMapping(value = "/users")
-        public ResponseEntity<List<User>> getAllUsers(
-                @RequestParam Optional<String> email,
-                @RequestParam Optional<String> password){
-            if (email.isPresent() && password.isPresent()) {
-                return new ResponseEntity<>(userRepository.findByEmailAndPassword(email.get(), password.get()), HttpStatus.OK);
-            }
+        public ResponseEntity<List<User>> getAllUsers(){
             return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
         }
+
+    @GetMapping(value = "/user")
+    public ResponseEntity<Optional<User>> getUser(
+            @RequestParam String email,
+            @RequestParam String password){
+            return new ResponseEntity<>(userRepository.findByEmailAndPassword(email, password), HttpStatus.OK);
+    }
 
         @GetMapping(value = "/users/{id}")
         public ResponseEntity getUser(@PathVariable Long id){

@@ -37,9 +37,10 @@ const NomNomContainer = () => {
 
   const handleGetUser = (user) => {
     const request = new Request();
-    const email = user[0];
-    const password = user[1];
-    const userPromise = request.get("/api/users", email, password);
+    const email = encodeURIComponent(user[0]);
+    const password = encodeURIComponent(user[1]);
+    const url = `/api/user?email=${email}&password=${password}`;
+    const userPromise = request.get(url);
     userPromise.then((data) => {
       setProfile(data);
     });
