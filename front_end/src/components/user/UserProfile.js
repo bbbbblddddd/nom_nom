@@ -1,23 +1,20 @@
 import DeleteAccount from "../uiComponents/DeleteAccount";
-import FaveRecipe from "../recipes/FaveRecipe";
+import FaveRecipeList from "../recipes/FaveRecipeList";
+import { Link } from "react-router-dom";
 
 const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
-  const faveList = profile.recipes.map((recipe, index) => {
-    return (
-      <li key={index}>
-        <FaveRecipe
-          recipe={recipe}
-          profile={profile}
-          onRecipeRemoved={onRecipeRemoved}
-        />
-      </li>
-    );
-  });
-
   return (
     <>
       <h1>Your current saved recipes:</h1>
-      {profile ? <ul>{faveList}</ul> : <h3>You have no saved recipes</h3>}
+      {profile == null ? (
+        <FaveRecipeList profile={profile} onRecipeRemoved={onRecipeRemoved} />
+      ) : (
+        <>
+          <h3>Please log in to access all your favourite recipes</h3>
+          <Link to="/main/login">Log in</Link>
+        </>
+      )}
+      <br />
       <DeleteAccount
         profileToDelete={profile}
         onDeleteAccount={onDeleteAccount}
