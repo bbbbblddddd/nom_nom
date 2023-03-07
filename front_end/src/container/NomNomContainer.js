@@ -30,9 +30,11 @@ const NomNomContainer = () => {
     const request = new Request();
 
     const userPromise = request.post("/api/users", user);
-    userPromise.then((data) => {
-      setProfile(data);
-    });
+    userPromise
+      .then((data) => data.json())
+      .then((data) => {
+        setProfile(data);
+      });
   };
 
   const handleGetUser = (user) => {
@@ -59,7 +61,6 @@ const NomNomContainer = () => {
     });
   };
 
-
   const onDeleteAccount = (profileToDelete) => {
     const id = profileToDelete.id;
     const request = new Request();
@@ -68,7 +69,7 @@ const NomNomContainer = () => {
     request.delete(url).then(() => {
       window.location = "/signup";
     });
-
+  };
   const onRecipeRemoved = (recipeToRemove) => {
     const copyProfile = { ...profile };
     copyProfile.recipes = copyProfile.recipes.filter(
@@ -133,7 +134,11 @@ const NomNomContainer = () => {
         <Route
           path="/profile"
           element={
-            <UserProfile profile={profile} onRecipeRemoved={onRecipeRemoved} onDeleteAccount={onDeleteAccount}/>
+            <UserProfile
+              profile={profile}
+              onRecipeRemoved={onRecipeRemoved}
+              onDeleteAccount={onDeleteAccount}
+            />
           }
         />
       </Routes>

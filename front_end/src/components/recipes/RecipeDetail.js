@@ -1,6 +1,5 @@
 import NavBar from "../NavBar";
 import BackButton from "../uiComponents/BackButton";
-import RemoveButton from "../uiComponents/RemoveButton";
 
 const RecipeDetail = ({ recipe }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {

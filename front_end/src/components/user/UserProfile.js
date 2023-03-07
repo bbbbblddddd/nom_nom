@@ -1,13 +1,15 @@
-
 import DeleteAccount from "../uiComponents/DeleteAccount";
 import FaveRecipe from "../recipes/FaveRecipe";
 
 const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
-
   const faveList = profile.recipes.map((recipe, index) => {
     return (
       <li key={index}>
-        <FaveRecipe recipe={recipe} profile = {profile} onRecipeRemoved= {onRecipeRemoved} />
+        <FaveRecipe
+          recipe={recipe}
+          profile={profile}
+          onRecipeRemoved={onRecipeRemoved}
+        />
       </li>
     );
   });
