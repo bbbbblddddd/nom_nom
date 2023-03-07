@@ -59,6 +59,20 @@ const NomNomContainer = () => {
     });
   };
 
+  const onRecipeRemoved = (recipeToRemove) => {
+    const copyProfile = { ...profile };
+    copyProfile.recipes = copyProfile.recipes.filter(
+      (recipe) => recipe !== recipeToRemove
+    );
+    setProfile(copyProfile);
+  };
+  // const request = new Request();
+
+  // request.post("/api/recipes", recipe).then(() => {
+  //   window.location = "/main/recipes";
+  // });
+  // };
+
   const findRecipeById = (id) => {
     let foundRecipe = "";
     for (let recipe of allRecipes) {
@@ -106,7 +120,12 @@ const NomNomContainer = () => {
           path="/create"
           element={<CreateRecipe onRecipeSave={onRecipeSave} />}
         />
-        <Route path="/profile" element={<UserProfile profile={profile} />} />
+        <Route
+          path="/profile"
+          element={
+            <UserProfile profile={profile} onRecipeRemoved={onRecipeRemoved} />
+          }
+        />
       </Routes>
     </>
   );
