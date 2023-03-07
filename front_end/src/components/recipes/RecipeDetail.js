@@ -3,13 +3,17 @@ import BackButton from "../uiComponents/BackButton";
 
 const RecipeDetail = ({ recipe }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {
-    return <li key={ingredient.id}>{ingredient.name}</li>;
+    return (
+      <li key={ingredient.id}>
+        {ingredient.name} {ingredient.quantity} {ingredient.unit}
+      </li>
+    );
   });
 
   const steps = recipe.steps.map((step) => {
     return (
       <li key={step.id}>
-        {step.stepNum} {step.description}
+        {step.stepNum}. {step.description}
       </li>
     );
   });
