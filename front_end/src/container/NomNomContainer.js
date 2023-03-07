@@ -59,6 +59,16 @@ const NomNomContainer = () => {
     });
   };
 
+  const onDeleteAccount = (profileToDelete) => {
+    const id = profileToDelete.id;
+    const request = new Request();
+    const url = "/api/users/" + id;
+
+    request.delete(url).then(() => {
+      window.location = "/signup";
+    });
+  };
+
   return (
     <>
       <Routes>
@@ -83,7 +93,12 @@ const NomNomContainer = () => {
           path="/create"
           element={<CreateRecipe onRecipeSave={onRecipeSave} />}
         />
-        <Route path="/profile" element={<UserProfile profile={profile} />} />
+        <Route
+          path="/profile"
+          element={
+            <UserProfile profile={profile} onDeleteAccount={onDeleteAccount} />
+          }
+        />
       </Routes>
     </>
   );
