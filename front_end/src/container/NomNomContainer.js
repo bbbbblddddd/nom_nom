@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Login from "../components/user/Login";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import AllRecipes from "../components/recipes/AllRecipes";
 import UserProfile from "../components/user/UserProfile";
 import { useState, useEffect } from "react";
@@ -13,7 +13,7 @@ const NomNomContainer = () => {
   const [allRecipes, setAllRecipes] = useState([]);
   const [profile, setProfile] = useState({});
   const [newRecipe, setNewRecipe] = useState({});
-  const [selectedRecipe, setSelectedRecipe] = useState({});
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   useEffect(() => {
     const request = new Request();
@@ -59,6 +59,7 @@ const NomNomContainer = () => {
     });
   };
 
+
   const onDeleteAccount = (profileToDelete) => {
     const id = profileToDelete.id;
     const request = new Request();
@@ -67,6 +68,43 @@ const NomNomContainer = () => {
     request.delete(url).then(() => {
       window.location = "/signup";
     });
+
+  const onRecipeRemoved = (recipeToRemove) => {
+    const copyProfile = { ...profile };
+    copyProfile.recipes = copyProfile.recipes.filter(
+      (recipe) => recipe !== recipeToRemove
+    );
+    setProfile(copyProfile);
+  };
+  // const request = new Request();
+
+  // request.post("/api/recipes", recipe).then(() => {
+  //   window.location = "/main/recipes";
+  // });
+  // };
+
+  const findRecipeById = (id) => {
+    let foundRecipe = "";
+    for (let recipe of allRecipes) {
+      if (recipe.id === parseInt(id)) {
+        foundRecipe = recipe;
+      }
+    }
+    console.log("foundRecipe", foundRecipe);
+    setSelectedRecipe(foundRecipe);
+  };
+
+  // const findRecipeById = (id) => {
+  //   return allRecipes.find((recipe) => {
+  //     console.log("recipe.id", recipe.id);
+  //     return recipe.id === parseInt(id);
+  //   });
+  // };
+
+  const RecipeDetailWrapper = () => {
+    const { id } = useParams();
+    let foundRecipe = findRecipeById(id);
+    return <RecipeDetail recipe={selectedRecipe} />;
   };
 
   return (
@@ -74,10 +112,9 @@ const NomNomContainer = () => {
       <Routes>
         <Route path="/login" element={<Login onLogin={handleGetUser} />} />
         <Route path="/signup" element={<SignUp onSignUp={handlePostUser} />} />
-        <Route
-          path="/recipes/:id"
-          element={<RecipeDetail recipe={selectedRecipe} />}
-        />
+        {selectedRecipe ? (
+          <Route path="/recipes/:id" element={<RecipeDetailWrapper />} />
+        ) : null}
 
         <Route
           path="/recipes"
@@ -96,7 +133,7 @@ const NomNomContainer = () => {
         <Route
           path="/profile"
           element={
-            <UserProfile profile={profile} onDeleteAccount={onDeleteAccount} />
+            <UserProfile profile={profile} onRecipeRemoved={onRecipeRemoved} onDeleteAccount={onDeleteAccount}/>
           }
         />
       </Routes>
