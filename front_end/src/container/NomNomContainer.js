@@ -74,7 +74,7 @@ const NomNomContainer = () => {
     const url = "/api/users/" + id;
 
     request.delete(url).then(() => {
-      window.location = "/signup";
+      window.location = "/main/signup";
     });
   };
 

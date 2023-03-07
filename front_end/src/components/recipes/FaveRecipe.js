@@ -1,14 +1,10 @@
 import RemoveButton from "../uiComponents/RemoveButton";
 
-const FaveRecipe = ({ recipe, onRecipeRemoved, profile }) => {
+const FaveRecipe = ({ recipe, onRecipeRemoved }) => {
   return (
     <>
       <p>{recipe.name}</p>
-      <RemoveButton
-        recipe={recipe}
-        onRecipeRemoved={onRecipeRemoved}
-        profile={profile}
-      />
+      <RemoveButton recipe={recipe} onRecipeRemoved={onRecipeRemoved} />
     </>
   );
 };
