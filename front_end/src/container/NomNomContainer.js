@@ -37,9 +37,11 @@ const NomNomContainer = () => {
     const request = new Request();
 
     const userPromise = request.post("/api/users", user);
-    userPromise.then((data) => {
-      setProfile(data);
-    });
+    userPromise
+      .then((data) => data.json())
+      .then((data) => {
+        setProfile(data);
+      });
   };
 
   const handleGetUser = (user) => {
