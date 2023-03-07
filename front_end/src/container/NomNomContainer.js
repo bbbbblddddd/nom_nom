@@ -3,7 +3,7 @@ import Login from "../components/user/Login";
 import { Routes, Route } from "react-router-dom";
 import AllRecipes from "../components/recipes/AllRecipes";
 import UserProfile from "../components/user/UserProfile";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useParams } from "react";
 import Request from "../helpers/Request";
 import RecipeDetail from "../components/recipes/RecipeDetail";
 import CreateRecipe from "../components/create/CreateRecipe";
@@ -56,6 +56,18 @@ const NomNomContainer = () => {
     request.post("/api/recipes", recipe).then(() => {
       window.location = "/main/recipes";
     });
+  };
+
+  const findRecipeById = (id) => {
+    return allRecipes.find((recipe) => {
+      return recipe.id === parseInt(id);
+    });
+  };
+
+  const RecipeDetailWrapper = () => {
+    const { id } = useParams();
+    let foundRecipe = findRecipeById(id);
+    return <RecipeDetail recipe={foundRecipe} />;
   };
 
   return (
