@@ -4,6 +4,7 @@ import FaveRecipeList from "./FaveRecipeList";
 import NavBar from "../NavBar";
 import LoginButton from "../uiComponents/LoginButton";
 import SignUpButton from "../uiComponents/SignUpButton";
+import AllRecipesButton from "../uiComponents/AllRecipesButton";
 
 const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
   return (
@@ -15,7 +16,7 @@ const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
             dashboard
           </h1>
           <h3 className="mb-2 font-nexabold text-2xl text-[#EE5D3D]">
-            Your saved recipes:
+            Your favourite recipes:
           </h3>
           {Object.keys(profile).length > 0 ? (
             <FaveRecipeList
@@ -39,6 +40,9 @@ const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
               <br />
             </>
           )}
+          <br />
+          <h3>Go browse our recipes to add more to your Favourites!</h3>
+          <AllRecipesButton />
           <br />
           <DeleteAccount
             profileToDelete={profile}
