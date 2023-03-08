@@ -30,16 +30,19 @@ const Welcome = () => {
               .
             </h1>
           </div>
-          <p className="animate__pulse animate__delay-1s flex justify-center font-nexaregular text-[32px] font-bold text-[#EE5D3D] animate__animated">
-            Cooking made fun!
+          <p className=" mr-32 -mt-2 flex justify-end font-nunito text-2xl font-bold text-[#9DC4E9] ">
+            Cooking Made Fun!
           </p>
           <br />
-          <div className="flex justify-center">
+          <div className="flex-col justify-center">
+            <p className="animate__pulse animate__delay-2s body-font pb-2 font-nexabold text-3xl text-[#EE5D3D] animate__animated">
+              Calling all mini chefs!
+            </p>
             <p className="body-font font-nunito text-[22px] text-[#EE5D3D]">
-              Calling all mini chefs! nomnom is the ultimate educational app for
-              kids and grown-ups who love cooking up a storm. With tons of tips
-              and tricks for making healthy meals, it's time to get your apron
-              on and start creating!
+              <span className="font-nomnombold">nomnom.</span> is the ultimate
+              educational app for kids and grown-ups who love cooking up a
+              storm. With tons of tips and tricks for making healthy meals, it's
+              time to get your apron on and start creating!
             </p>
           </div>
           <br />

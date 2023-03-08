@@ -6,8 +6,10 @@ import FavouriteButton from "../uiComponents/FavouriteButton";
 const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {
     return (
-      <li key={ingredient.id}>
-        {ingredient.name} {ingredient.quantity} {ingredient.unit}
+      <li key={ingredient.id} className="lowercase">
+        <span className="font-bold">{ingredient.name}</span>,{" "}
+        {ingredient.quantity} x{" "}
+        <span className="lowercase">{ingredient.unit}</span>
       </li>
     );
   });
@@ -36,11 +38,24 @@ const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
   return (
     <div className="min-h-screen bg-food_background4 bg-cover bg-fixed p-10 text-center">
       <NavBar />
-      <div className="align-items-center mx-auto h-5/6 w-10/12 flex-col justify-evenly rounded-3xl bg-[#fffffff3] px-12">
-        <h1 className="p-12 font-nexabold text-4xl text-[#EE5D3D]">
+      <div className="align-items-center mx-auto h-5/6 w-10/12 flex-col justify-evenly rounded-3xl bg-[#fffffff3] px-12 pb-8">
+        <h1 className="mt-10 pt-20 pb-10 font-nexabold text-6xl text-[#EE5D3D]">
           {recipe.name}
         </h1>
-        <div className="align-items-center mb-4 flex rounded-lg bg-[#f7c46c9d] p-5">
+        <div>
+          <img
+            src={recipe.image_url}
+            alt={recipe.name}
+            className="float-right mb-2 mr-24 flex h-72 w-72 rounded-lg object-cover"
+          />
+        </div>
+        <div className="mb-4 ml-16 h-72 w-1/2 flex-col justify-center rounded-lg bg-[#fce26e98] p-7 pt-4">
+          <h3 className="mb-1 text-left font-nexabold text-xl text-[#EE5D3D]">
+            Ingredients:
+          </h3>
+          <ul className="text-left font-nunito text-lg">{ingredients}</ul>
+        </div>
+        <div className="align-items-center mb-4 mt-7 flex rounded-lg bg-[#f7c46c9d] p-7 pr-16 text-xl">
           <div className="w-full">
             <h3 className="mb-2 font-nexabold text-lg text-[#EE5D3D]">
               Prep Time:
@@ -70,7 +85,7 @@ const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
               Meal Type:
             </h3>
             <div className="font-nunito">
-              <p>{recipe.mealType}</p>
+              <p className="lowercase">{recipe.mealType}</p>
             </div>
           </div>
           <div className="w-full">
@@ -81,21 +96,10 @@ const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
               <p>{recipe.extraEquip}</p>
             </div>
           </div>
-          <div className="mr-4 w-full">
-            <h3 className="mb-2 font-nexabold text-lg text-[#EE5D3D]">
-              Ingredients:
-            </h3>
-            <ul className="font-nunito">{ingredients}</ul>
-          </div>
         </div>
-        <div className="flex w-full justify-between text-start">
+        <div className="w-full flex-col justify-between text-start">
           <h3 className="px-2 font-nexabold text-lg text-[#EE5D3D]">Steps:</h3>
           <ol className="px-2 font-nunito">{steps}</ol>
-          <img
-            src={recipe.image_url}
-            alt={recipe.name}
-            className="h-64 w-64 justify-center rounded-lg"
-          />
         </div>
         <br />
         <FavouriteButton onRecipeFavourited={handleFavourite} />

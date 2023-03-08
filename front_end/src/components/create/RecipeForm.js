@@ -60,7 +60,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         <label className="font-nunito text-xl">Enter a fun recipe name:</label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="name"
           placeholder="Name"
           onChange={handleName}
@@ -73,7 +73,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="img"
           placeholder="Choose an image"
           onChange={handleImage}
@@ -86,7 +86,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="prepTime"
           placeholder="e.g. 5 minutes"
           onChange={handlePrepTime}
@@ -99,7 +99,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="cookTime"
           placeholder="e.g. 10 minutes"
           onChange={handleCookTime}
@@ -112,7 +112,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="servings"
           placeholder="Servings"
           onChange={handleServings}
@@ -125,7 +125,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <select
-          className="w-60 rounded-3xl bg-[#94c93895] p-2 font-nunito text-gray-400"
+          className="w-60 rounded-xl bg-[#94c93895] p-2 font-nunito text-gray-400"
           name="mealType"
           id="mealType"
           onChange={handleType}
@@ -143,7 +143,7 @@ const RecipeForm = ({ onRecipeCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="extraEquip"
           placeholder="e.g. food processor"
           onChange={handleEquip}

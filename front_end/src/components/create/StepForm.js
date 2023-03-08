@@ -28,7 +28,7 @@ const StepForm = ({ onStepCreate }) => {
         <label className="font-nunito text-xl">Which step is it?</label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="number"
           placeholder="e.g. Step #1"
           onChange={handleNumber}
@@ -41,7 +41,7 @@ const StepForm = ({ onStepCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="description"
           placeholder="e.g. Chop potatoes"
           onChange={handleDescription}
@@ -49,7 +49,7 @@ const StepForm = ({ onStepCreate }) => {
         />
         <br />
         <button
-          className="m-6 rounded-full bg-[#3E8B46] p-4 font-nunito text-xl text-white"
+          className="m-6 rounded-full bg-[#3E8B46] p-3 font-nunito text-xl text-white"
           type="submit"
         >
           Submit
