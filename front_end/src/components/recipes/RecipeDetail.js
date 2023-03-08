@@ -3,7 +3,7 @@ import NavBar from "../NavBar";
 import BackButton from "../uiComponents/BackButton";
 import FavouriteButton from "../uiComponents/FavouriteButton";
 
-const RecipeDetail = ({ recipe }) => {
+const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
   const ingredients = recipe.ingredients.map((ingredient) => {
     return (
       <li key={ingredient.id}>
@@ -19,6 +19,10 @@ const RecipeDetail = ({ recipe }) => {
       </li>
     );
   });
+  const handleFavourite = () => {
+    onRecipeFavourited(recipe);
+    console.log(recipe);
+  };
 
   return (
     <div className="min-h-screen bg-food_background4 bg-cover bg-fixed p-10 text-center">
@@ -85,7 +89,7 @@ const RecipeDetail = ({ recipe }) => {
           />
         </div>
         <br />
-        <FavouriteButton />
+        <FavouriteButton onRecipeFavourited={handleFavourite} />
         <br />
         <BackButton />
       </div>

@@ -28,7 +28,11 @@ const SignUp = ({ onSignUp }) => {
     } else {
       setSubmitted(true);
       setError(false);
-      const login = { email: stateEmail, password: statePassword };
+      const login = {
+        email: stateEmail,
+        password: statePassword,
+        recipes: [],
+      };
       onSignUp(login);
     }
   };
