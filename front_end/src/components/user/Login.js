@@ -49,7 +49,7 @@ const Login = ({ onLogin }) => {
               <br />
               <br />
               <input
-                type="email"
+                type="text"
                 placeholder="Password:"
                 className="placeholder-center body-font mx-auto mb-10 inline-flex w-full max-w-md rounded-md border-2 border-gray-400 
                 bg-[#d8f999] py-2 px-4 font-nunito focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#95C938]"
