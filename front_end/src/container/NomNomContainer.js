@@ -21,7 +21,6 @@ const NomNomContainer = () => {
 
     const recipePromise = request.get("/api/recipes");
 
-    // Promise([allRecipePromise]).then((data) => {
     recipePromise.then((data) => {
       setAllRecipes(data);
     });
@@ -83,6 +82,10 @@ const NomNomContainer = () => {
     copyProfile.recipes = copyProfile.recipes.filter(
       (recipe) => recipe !== recipeToRemove
     );
+    copyProfile.recipes.forEach((r) => {
+      delete r.ingredients;
+      delete r.steps;
+    });
     const request = new Request();
 
     const updatedUserPromise = request.put(
@@ -99,11 +102,14 @@ const NomNomContainer = () => {
   const onRecipeFavourited = (recipeToFavourite) => {
     const copyProfile = { ...profile };
     const copyRecipe = { ...recipeToFavourite };
-    delete copyRecipe.ingredients;
-    delete copyRecipe.steps;
-    console.log(recipeToFavourite);
+
     copyProfile.recipes.push(copyRecipe);
-    console.log(copyProfile);
+
+    copyProfile.recipes.forEach((r) => {
+      delete r.ingredients;
+      delete r.steps;
+    });
+
     const request = new Request();
 
     const updatedUserPromise = request.put(
@@ -116,12 +122,6 @@ const NomNomContainer = () => {
         setProfile(data);
       });
   };
-  // const request = new Request();
-
-  // request.post("/api/recipes", recipe).then(() => {
-  //   window.location = "/main/recipes";
-  // });
-  // };
 
   const findRecipeById = (id) => {
     let foundRecipe = "";
@@ -130,16 +130,8 @@ const NomNomContainer = () => {
         foundRecipe = recipe;
       }
     }
-    console.log("foundRecipe", foundRecipe);
     setSelectedRecipe(foundRecipe);
   };
-
-  // const findRecipeById = (id) => {
-  //   return allRecipes.find((recipe) => {
-  //     console.log("recipe.id", recipe.id);
-  //     return recipe.id === parseInt(id);
-  //   });
-  // };
 
   const RecipeDetailWrapper = () => {
     const { id } = useParams();
