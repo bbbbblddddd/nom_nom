@@ -1,7 +1,7 @@
 const StepItem = ({ step }) => {
   return (
     <p>
-      {step.number}. {step.description}
+      {step.stepNum}. {step.description}
     </p>
   );
 };
