@@ -1,4 +1,4 @@
-import FaveRecipe from "../recipes/FaveRecipe";
+import FaveRecipe from "./FaveRecipe";
 
 const FaveRecipeList = ({ profile, onRecipeRemoved }) => {
   const faveList = profile.recipes.map((recipe, index) => {
