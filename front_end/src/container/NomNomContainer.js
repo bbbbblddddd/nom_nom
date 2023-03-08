@@ -99,11 +99,16 @@ const NomNomContainer = () => {
   const onRecipeFavourited = (recipeToFavourite) => {
     const copyProfile = { ...profile };
     const copyRecipe = { ...recipeToFavourite };
-    delete copyRecipe.ingredients;
-    delete copyRecipe.steps;
+
     console.log(recipeToFavourite);
     copyProfile.recipes.push(copyRecipe);
     console.log(copyProfile);
+
+    copyProfile.recipes.forEach((r) => {
+      delete r.ingredients;
+      delete r.steps;
+    });
+
     const request = new Request();
 
     const updatedUserPromise = request.put(
