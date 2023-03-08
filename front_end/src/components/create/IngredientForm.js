@@ -49,7 +49,7 @@ const IngredientForm = ({ onIngredientCreate }) => {
         <label className="font-nunito text-xl">Enter an ingredient: </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="name"
           placeholder="Name"
           onChange={handleName}
@@ -62,7 +62,7 @@ const IngredientForm = ({ onIngredientCreate }) => {
         </label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="img"
           placeholder="Choose an image"
           onChange={handleImage}
@@ -73,7 +73,7 @@ const IngredientForm = ({ onIngredientCreate }) => {
         <label className="font-nunito text-xl">What type of food is it?</label>
         <br />
         <select
-          className="w-60 rounded-3xl bg-[#94c93895] p-2 font-nunito text-gray-400"
+          className="w-60 rounded-xl bg-[#94c93895] p-2 font-nunito text-gray-400"
           name="foodType"
           id="foodType"
           onChange={handleType}
@@ -94,14 +94,14 @@ const IngredientForm = ({ onIngredientCreate }) => {
         <label className="font-nunito text-xl">How much will you need?</label>
         <br />
         <input
-          className="rounded-3xl bg-[#94c93895] p-2 font-nunito text-xl"
+          className="rounded-xl bg-[#94c93895] p-2 font-nunito text-xl"
           type="quantity"
           placeholder="Number of"
           onChange={handleQuantity}
           value={stateQuantity}
         />
         <select
-          className="w-60 rounded-3xl bg-[#94c93895] p-2 font-nunito text-gray-400"
+          className="w-60 rounded-xl bg-[#94c93895] p-2 font-nunito text-gray-400"
           name="unit"
           id="unit"
           onChange={handleUnit}
