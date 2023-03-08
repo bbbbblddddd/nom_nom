@@ -17,7 +17,7 @@ const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
           <h3 className="mb-2 font-nexabold text-2xl text-[#EE5D3D]">
             Your saved recipes:
           </h3>
-          {profile == null ? (
+          {Object.keys(profile).length > 0 ? (
             <FaveRecipeList
               profile={profile}
               onRecipeRemoved={onRecipeRemoved}
@@ -29,16 +29,16 @@ const UserProfile = ({ profile, onRecipeRemoved, onDeleteAccount }) => {
               </h3>
               <br />
               <LoginButton />
+              <br />
+              <br />
+              <p className="body-font flex-col font-nunito">
+                Don't have an account?
+                <br />
+                <SignUpButton />
+              </p>
+              <br />
             </>
           )}
-          <br />
-          <br />
-          <p className="body-font flex-col font-nunito">
-            Don't have an account?
-            <br />
-            <SignUpButton />
-          </p>
-          <br />
           <br />
           <DeleteAccount
             profileToDelete={profile}

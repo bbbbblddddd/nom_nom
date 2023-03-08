@@ -95,6 +95,27 @@ const NomNomContainer = () => {
         setProfile(data);
       });
   };
+
+  const onRecipeFavourited = (recipeToFavourite) => {
+    const copyProfile = { ...profile };
+    const copyRecipe = { ...recipeToFavourite };
+    delete copyRecipe.ingredients;
+    delete copyRecipe.steps;
+    console.log(recipeToFavourite);
+    copyProfile.recipes.push(copyRecipe);
+    console.log(copyProfile);
+    const request = new Request();
+
+    const updatedUserPromise = request.put(
+      `/api/users/${copyProfile.id}`,
+      copyProfile
+    );
+    updatedUserPromise
+      .then((data) => data.json())
+      .then((data) => {
+        setProfile(data);
+      });
+  };
   // const request = new Request();
 
   // request.post("/api/recipes", recipe).then(() => {
@@ -123,7 +144,12 @@ const NomNomContainer = () => {
   const RecipeDetailWrapper = () => {
     const { id } = useParams();
     let foundRecipe = findRecipeById(id);
-    return <RecipeDetail recipe={selectedRecipe} />;
+    return (
+      <RecipeDetail
+        recipe={selectedRecipe}
+        onRecipeFavourited={onRecipeFavourited}
+      />
+    );
   };
 
   return (
