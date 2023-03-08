@@ -12,7 +12,16 @@ const RecipeDetail = ({ recipe, onRecipeFavourited }) => {
     );
   });
 
-  const steps = recipe.steps.map((step) => {
+  const orderedSteps = recipe.steps.sort((s1, s2) => {
+    if (s1.stepNum > s2.stepNum) {
+      return 1;
+    }
+    if (s1.stepNum < s2.stepNum) {
+      return -1;
+    }
+    return 0;
+  });
+  const steps = orderedSteps.map((step) => {
     return (
       <li key={step.id}>
         {step.stepNum}. {step.description}
