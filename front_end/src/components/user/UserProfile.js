@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import DeleteAccount from "../uiComponents/DeleteAccount";
-import FaveRecipeList from "../recipes/FaveRecipeList";
+import FaveRecipeList from "./FaveRecipeList";
 import NavBar from "../NavBar";
 import LoginButton from "../uiComponents/LoginButton";
 import SignUpButton from "../uiComponents/SignUpButton";
