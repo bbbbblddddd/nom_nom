@@ -3,7 +3,10 @@ const DeleteAccount = ({ profileToDelete, onDeleteAccount }) => {
     onDeleteAccount(profileToDelete);
   };
   return (
-    <button className="font-nunito hover:underline" onClick={handleclick}>
+    <button
+      className="font-nunito text-red-500 hover:underline"
+      onClick={handleclick}
+    >
       Delete account
     </button>
   );

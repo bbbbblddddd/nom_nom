@@ -7,7 +7,7 @@ import StepsList from "./StepsList";
 import RecipeForm from "./RecipeForm";
 import NavBar from "../NavBar";
 import { useState } from "react";
-import BackButton from "../uiComponents/BackButton";
+import GreenBackButton from "../uiComponents/GreenBackButton";
 
 const CreateRecipe = ({ onRecipeSave }) => {
   const [newRecipe, setNewRecipe] = useState(null);
@@ -67,13 +67,17 @@ const CreateRecipe = ({ onRecipeSave }) => {
             All done creating your new recipe?
           </h2>
           <button
-            className="m-2 rounded-full bg-[#3E8B46] p-4 font-nunito text-xl text-white"
+            className="group relative px-6 py-3 font-nunito text-xl text-white"
             onClick={handleclick}
           >
-            Save Recipe
+            <span className="absolute inset-0 h-full w-full translate-x-0 -skew-x-12 transform bg-[#3E8B46] transition-all duration-300 ease-out group-hover:skew-x-12 group-hover:bg-[#94c938df]"></span>
+            <span className="absolute inset-0 h-full w-full skew-x-12 transform bg-[#3E8B46] transition-all duration-300 ease-out group-hover:-skew-x-12 group-hover:bg-[#94c938df]"></span>
+            <span className="absolute bottom-0 left-0 hidden h-20 w-10 -translate-x-8 translate-y-10 -rotate-12 transform bg-[#3E8B46] transition-all duration-100 ease-out"></span>
+            <span className="absolute bottom-0 right-0 hidden h-20 w-10 translate-x-10 translate-y-8 -rotate-12 transform bg-[#307036] transition-all duration-100 ease-out"></span>
+            <span className="relative">Save Recipe</span>
           </button>
           <br />
-          <BackButton />
+          <GreenBackButton />
         </div>
       </div>
     </div>
